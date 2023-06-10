@@ -1,0 +1,13 @@
+﻿cl : Command line warning D9002: ignoring unknown option '/Gw'
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+  BuildGroup.cpp
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+  Panel.cpp
+d:\source-sdk-2011\src\vgui2\vgui_controls\panel.cpp(1354): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+d:\source-sdk-2011\src\vgui2\vgui_controls\panel.cpp(1362): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+d:\source-sdk-2011\src\vgui2\vgui_controls\panel.cpp(3336): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+d:\source-sdk-2011\src\vgui2\vgui_controls\panel.cpp(4578): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+d:\source-sdk-2011\src\vgui2\vgui_controls\panel.cpp(4580): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+d:\source-sdk-2011\src\vgui2\vgui_controls\panel.cpp(4681): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+d:\source-sdk-2011\src\vgui2\vgui_controls\panel.cpp(5279): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+  vgui_controls.vcxproj -> D:\source-sdk-2011\src\vgui2\vgui_controls\..\..\lib\public\.\vgui_controls.lib

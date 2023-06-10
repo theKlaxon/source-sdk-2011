@@ -1,0 +1,37 @@
+﻿  Running VPC CRC Check - mathlib.vpc
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+  3dnow.cpp
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+  almostequal.cpp
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+  anorms.cpp
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+  bumpvects.cpp
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+  color_conversion.cpp
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+  halton.cpp
+  IceKey.cpp
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+  imagequant.cpp
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+  lightdesc.cpp
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+  mathlib_base.cpp
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+  polyhedron.cpp
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+  powsse.cpp
+  quantize.cpp
+  randsse.cpp
+  simdvectormatrix.cpp
+  sparse_convolution_noise.cpp
+  spherical.cpp
+  sse.cpp
+  sseconst.cpp
+  ssenoise.cpp
+  vector.cpp
+  vmatrix.cpp
+  mathlib.vcxproj -> D:\source-sdk-2011\src\mathlib\..\lib\public\.\mathlib.lib

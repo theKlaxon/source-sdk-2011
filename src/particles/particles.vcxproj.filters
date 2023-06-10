@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{922C6F41-C460-59B1-3A59-D4FA6DDC9C37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Link Libraries">
+      <UniqueIdentifier>{6D11200E-4206-7C82-1DCE-61EA5E3FE718}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9A3C0498-7C60-1BDF-BDF7-06BDDE4E468F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\asw">
+      <UniqueIdentifier>{bd32aa09-68f0-40af-8daf-456bba7052c0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\public\particles\particles.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="particles_internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="random_floats.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="particles.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="patch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="asw\addbuiltin_ops.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\bitmap.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\builtin_constraints.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\builtin_initializers.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\builtin_particle_emitters.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\builtin_particle_forces.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\builtin_particle_ops.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\builtin_particle_render_ops.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\colorconversion.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\debug_lib_check.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\FastTrunc.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\floatbitmap.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\floatbitmap_bilateralfilter.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\floatbitmap2.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\floatbitmap3.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\floatbitmap4.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\floatcubemap.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\HashParticleCache.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\HashRenderer.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\ImageByteSwap.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\imageformat.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\ImpParticle.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\ImpRenderer.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\ImpTiler.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\IndexTriStripVertexBuffer.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\IndexTriVertexBuffer.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\InfHashParticleCache.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\InfHashRenderer.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\LocalBuffer.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\MCParticleCache.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\MCRenderer.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\particle_snapshot.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\particle_sort.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\PhysParticle.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\PhysParticleCache.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\PhysTiler.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\ProjectingParticleCache.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\psd.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\psheet.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\resample.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\SideProjectingParticleCache.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\SortedIndexTriVertexBuffer.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\SweepRenderer.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\Syncro.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\texturepacker.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\tgaloader.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\tgawriter.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\TriStripVertexBuffer.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\UserFunctions.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\VolumetricParticleCache.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+    <Object Include="asw\VolumetricSweepRenderer.obj">
+      <Filter>Source Files\asw</Filter>
+    </Object>
+  </ItemGroup>
+</Project>

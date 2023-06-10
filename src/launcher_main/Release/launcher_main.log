@@ -1,0 +1,12 @@
+﻿    
+    This VCPROJ is out of sync with its VPC scripts.
+    launcher_main.vpc mismatches (0xd8282764 vs 0xd5029127).
+    Please use VPC to re-generate!
+    
+C:\Program Files\Microsoft Visual Studio\2022\Preview\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(146,5): error MSB3073: The command "if EXIST ..\..\game\hl2.exe for /f "delims=" %%A in ('attrib "..\..\game\hl2.exe"') do set valveTmpIsReadOnly="%%A"
+C:\Program Files\Microsoft Visual Studio\2022\Preview\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(146,5): error MSB3073: set valveTmpIsReadOnlyLetter=%valveTmpIsReadOnly:~6,1%
+C:\Program Files\Microsoft Visual Studio\2022\Preview\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(146,5): error MSB3073: if "%valveTmpIsReadOnlyLetter%"=="R" del /q "D:\source2011\src\launcher_main\Release\"launcher_main.exe
+C:\Program Files\Microsoft Visual Studio\2022\Preview\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(146,5): error MSB3073: set path=..\..\game\bin;%path%
+C:\Program Files\Microsoft Visual Studio\2022\Preview\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(146,5): error MSB3073: if exist ..\devtools\bin\vpc.exe ..\devtools\bin\vpc.exe -crc launcher_main.vpc d8282764 -crc ..\vpc_scripts\source_exe_win_win32_base.vpc 62638c47 -crc ..\vpc_scripts\version.vpc 26d8e8a7 -crc ..\vpc_scripts\loadaddress.vpc 49fd4a9f -crc ..\vpc_scripts\source_exe_win_win32_debug.vpc 78028684 -crc ..\vpc_scripts\source_exe_win_win32_release.vpc cb5c1854
+C:\Program Files\Microsoft Visual Studio\2022\Preview\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(146,5): error MSB3073: 
+C:\Program Files\Microsoft Visual Studio\2022\Preview\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(146,5): error MSB3073: :VCEnd" exited with code 1.

@@ -1,0 +1,618 @@
+﻿  Running VPC CRC Check - tier1.vpc
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+  bitbuf.cpp
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+  byteswap.cpp
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+  characterset.cpp
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+  checksum_crc.cpp
+  checksum_md5.cpp
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+  checksum_sha1.cpp
+d:\source2011\src\tier1\checksum_sha1.cpp(25): fatal error C1083: Cannot open include file: 'checksum_sha1.h': No such file or directory
+  commandbuffer.cpp
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+  convar.cpp
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+  datamanager.cpp
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+  diff.cpp
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+  generichash.cpp
+cl : Command line warning D9002: ignoring unknown option '/Gw'
+  ilocalize.cpp
+  interface.cpp
+  KeyValues.cpp
+d:\source2011\src\tier1\byteswap.cpp(54): error C2677: binary '[' : no global operator found which takes type '' (or there is no acceptable conversion)
+d:\source2011\src\tier1\byteswap.cpp(55): error C2677: binary '[' : no global operator found which takes type '' (or there is no acceptable conversion)
+d:\source2011\src\tier1\byteswap.cpp(65): error C3861: 'assert': identifier not found
+d:\source2011\src\tier1\byteswap.cpp(85): error C2677: binary '[' : no global operator found which takes type '' (or there is no acceptable conversion)
+d:\source2011\src\tier1\byteswap.cpp(86): error C2677: binary '[' : no global operator found which takes type '' (or there is no acceptable conversion)
+d:\source2011\src\tier1\bitbuf.cpp(116): error C2664: 'StoreLittleDWord' : cannot convert parameter 1 from 'unsigned long *' to 'uint32 *'
+          Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+  kvpacker.cpp
+d:\source2011\src\tier1\bitbuf.cpp(160): error C2440: '=' : cannot convert from 'unsigned long *' to 'unsigned char *'
+          Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+d:\source2011\src\tier1\bitbuf.cpp(223): error C2039: 'WriteVarInt32' : is not a member of 'bf_write'
+          d:\source2011\src\public\tier1\bitbuf.h(90) : see declaration of 'bf_write'
+d:\source2011\src\tier1\bitbuf.cpp(226): error C2065: 'm_iCurBit' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(226): error C2065: 'm_iCurBit' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(226): error C2653: 'bitbuf' : is not a class or namespace name
+d:\source2011\src\tier1\bitbuf.cpp(226): error C2065: 'kMaxVarint32Bytes' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(226): error C2065: 'm_nDataBits' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(228): error C2065: 'm_pData' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(228): error C2065: 'm_iCurBit' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(243): error C2065: 'm_iCurBit' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(249): error C2065: 'm_iCurBit' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(256): error C2065: 'm_iCurBit' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(263): error C2065: 'm_iCurBit' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(270): error C2065: 'm_iCurBit' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(278): error C3861: 'WriteUBitLong': identifier not found
+d:\source2011\src\tier1\bitbuf.cpp(281): error C3861: 'WriteUBitLong': identifier not found
+d:\source2011\src\tier1\bitbuf.cpp(285): error C2039: 'WriteVarInt64' : is not a member of 'bf_write'
+          d:\source2011\src\public\tier1\bitbuf.h(90) : see declaration of 'bf_write'
+d:\source2011\src\tier1\bitbuf.cpp(288): error C2065: 'm_iCurBit' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(288): error C2065: 'm_iCurBit' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(288): error C2653: 'bitbuf' : is not a class or namespace name
+d:\source2011\src\tier1\bitbuf.cpp(288): error C2065: 'kMaxVarintBytes' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(288): error C2065: 'm_nDataBits' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(290): error C2065: 'm_pData' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(290): error C2065: 'm_iCurBit' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(386): error C2065: 'm_iCurBit' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(392): error C3861: 'WriteUBitLong': identifier not found
+d:\source2011\src\tier1\bitbuf.cpp(395): error C3861: 'WriteUBitLong': identifier not found
+d:\source2011\src\tier1\bitbuf.cpp(399): error C2039: 'WriteSignedVarInt32' : is not a member of 'bf_write'
+          d:\source2011\src\public\tier1\bitbuf.h(90) : see declaration of 'bf_write'
+d:\source2011\src\tier1\bitbuf.cpp(401): error C2653: 'bitbuf' : is not a class or namespace name
+d:\source2011\src\tier1\bitbuf.cpp(401): error C3861: 'ZigZagEncode32': identifier not found
+d:\source2011\src\tier1\bitbuf.cpp(404): error C2039: 'WriteSignedVarInt64' : is not a member of 'bf_write'
+          d:\source2011\src\public\tier1\bitbuf.h(90) : see declaration of 'bf_write'
+d:\source2011\src\tier1\bitbuf.cpp(406): error C2653: 'bitbuf' : is not a class or namespace name
+d:\source2011\src\tier1\bitbuf.cpp(406): error C3861: 'ZigZagEncode64': identifier not found
+d:\source2011\src\tier1\bitbuf.cpp(409): error C2039: 'ByteSizeVarInt32' : is not a member of 'bf_write'
+          d:\source2011\src\public\tier1\bitbuf.h(90) : see declaration of 'bf_write'
+d:\source2011\src\tier1\bitbuf.cpp(419): error C2039: 'ByteSizeVarInt64' : is not a member of 'bf_write'
+          d:\source2011\src\public\tier1\bitbuf.h(90) : see declaration of 'bf_write'
+d:\source2011\src\tier1\bitbuf.cpp(429): error C2039: 'ByteSizeSignedVarInt32' : is not a member of 'bf_write'
+          d:\source2011\src\public\tier1\bitbuf.h(90) : see declaration of 'bf_write'
+d:\source2011\src\tier1\bitbuf.cpp(431): error C2653: 'bitbuf' : is not a class or namespace name
+d:\source2011\src\tier1\bitbuf.cpp(431): error C3861: 'ZigZagEncode32': identifier not found
+d:\source2011\src\tier1\bitbuf.cpp(434): error C2039: 'ByteSizeSignedVarInt64' : is not a member of 'bf_write'
+          d:\source2011\src\public\tier1\bitbuf.h(90) : see declaration of 'bf_write'
+d:\source2011\src\tier1\bitbuf.cpp(436): error C2653: 'bitbuf' : is not a class or namespace name
+d:\source2011\src\tier1\bitbuf.cpp(436): error C3861: 'ZigZagEncode64': identifier not found
+d:\source2011\src\tier1\bitbuf.cpp(493): error C2440: 'initializing' : cannot convert from 'unsigned char *' to 'unsigned long *'
+          Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+d:\source2011\src\tier1\bitbuf.cpp(567): error C2511: 'void bf_write::WriteBitCoordMP(const float,bool,bool)' : overloaded member function not found in 'bf_write'
+          d:\source2011\src\public\tier1\bitbuf.h(90) : see declaration of 'bf_write'
+d:\source2011\src\tier1\bitbuf.cpp(725): error C2511: 'void bf_write::WriteByte(int)' : overloaded member function not found in 'bf_write'
+          d:\source2011\src\public\tier1\bitbuf.h(90) : see declaration of 'bf_write'
+d:\source2011\src\tier1\bitbuf.cpp(735): error C2511: 'void bf_write::WriteWord(int)' : overloaded member function not found in 'bf_write'
+          d:\source2011\src\public\tier1\bitbuf.h(90) : see declaration of 'bf_write'
+d:\source2011\src\tier1\bitbuf.cpp(791): error C2084: function 'bf_read::bf_read(void)' already has a body
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see previous definition of '{ctor}'
+d:\source2011\src\tier1\bitbuf.cpp(792): error C2248: 'CBitRead::m_pData' : cannot access private member declared in class 'CBitRead'
+          d:\source2011\src\public\tier1\bitbuf.h(995) : see declaration of 'CBitRead::m_pData'
+          d:\source2011\src\public\tier1\bitbuf.h(989) : see declaration of 'CBitRead'
+d:\source2011\src\tier1\bitbuf.cpp(795): error C2065: 'm_iCurBit' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(797): error C2065: 'm_bAssertOnOverflow' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(802): error C2084: function 'bf_read::bf_read(const void *,int,int)' already has a body
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see previous definition of '{ctor}'
+d:\source2011\src\tier1\bitbuf.cpp(803): error C2065: 'm_bAssertOnOverflow' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(808): error C2084: function 'bf_read::bf_read(const char *,const void *,int,int)' already has a body
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see previous definition of '{ctor}'
+d:\source2011\src\tier1\bitbuf.cpp(809): error C2065: 'm_bAssertOnOverflow' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(815): error C2509: 'StartReading' : member function not declared in 'bf_read'
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see declaration of 'bf_read'
+d:\source2011\src\tier1\bitbuf.cpp(836): error C2039: 'Reset' : is not a member of 'bf_read'
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see declaration of 'bf_read'
+d:\source2011\src\tier1\bitbuf.cpp(838): error C2065: 'm_iCurBit' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(839): error C2065: 'm_bOverflow' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(842): error C2039: 'SetAssertOnOverflow' : is not a member of 'bf_read'
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see declaration of 'bf_read'
+d:\source2011\src\tier1\bitbuf.cpp(844): error C2065: 'm_bAssertOnOverflow' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(848): error C2509: 'SetDebugName' : member function not declared in 'bf_read'
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see declaration of 'bf_read'
+d:\source2011\src\tier1\bitbuf.cpp(853): error C2509: 'SetOverflowFlag' : member function not declared in 'bf_read'
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see declaration of 'bf_read'
+d:\source2011\src\tier1\bitbuf.cpp(861): error C2039: 'CheckReadUBitLong' : is not a member of 'bf_read'
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see declaration of 'bf_read'
+d:\source2011\src\tier1\bitbuf.cpp(869): error C3861: 'ReadOneBitNoCheck': identifier not found
+d:\source2011\src\tier1\bitbuf.cpp(872): error C2065: 'm_iCurBit' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(878): error C2509: 'ReadBits' : member function not declared in 'bf_read'
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see declaration of 'bf_read'
+d:\source2011\src\tier1\bitbuf.cpp(923): error C2039: 'ReadBitsClamped_ptr' : is not a member of 'bf_read'
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see declaration of 'bf_read'
+d:\source2011\src\tier1\bitbuf.cpp(941): error C3861: 'ReadBits': identifier not found
+d:\source2011\src\tier1\bitbuf.cpp(942): error C3861: 'SeekRelative': identifier not found
+d:\source2011\src\tier1\bitbuf.cpp(949): error C2509: 'ReadBitAngle' : member function not declared in 'bf_read'
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see declaration of 'bf_read'
+d:\source2011\src\tier1\bitbuf.cpp(963): error C2509: 'PeekUBitLong' : member function not declared in 'bf_read'
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see declaration of 'bf_read'
+d:\source2011\src\tier1\bitbuf.cpp(995): error C2039: 'ReadUBitLongNoInline' : is not a member of 'bf_read'
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see declaration of 'bf_read'
+d:\source2011\src\tier1\bitbuf.cpp(997): error C3861: 'ReadUBitLong': identifier not found
+d:\source2011\src\tier1\bitbuf.cpp(1000): error C2039: 'ReadUBitVarInternal' : is not a member of 'bf_read'
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see declaration of 'bf_read'
+d:\source2011\src\tier1\bitbuf.cpp(1002): error C2065: 'm_iCurBit' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(1005): error C3861: 'ReadUBitLong': identifier not found
+d:\source2011\src\tier1\bitbuf.cpp(1010): error C2509: 'ReadSBitLong' : member function not declared in 'bf_read'
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see declaration of 'bf_read'
+d:\source2011\src\tier1\bitbuf.cpp(1021): error C2039: 'ReadVarInt32' : is not a member of 'bf_read'
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see declaration of 'bf_read'
+d:\source2011\src\tier1\bitbuf.cpp(1029): error C2653: 'bitbuf' : is not a class or namespace name
+d:\source2011\src\tier1\checksum_md5.cpp(274): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\source2011\src\tier1\bitbuf.cpp(1029): error C2065: 'kMaxVarint32Bytes' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(1033): error C3861: 'ReadUBitLong': identifier not found
+d:\source2011\src\tier1\bitbuf.cpp(1041): error C2039: 'ReadVarInt64' : is not a member of 'bf_read'
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see declaration of 'bf_read'
+d:\source2011\src\tier1\bitbuf.cpp(1049): error C2653: 'bitbuf' : is not a class or namespace name
+d:\source2011\src\tier1\bitbuf.cpp(1049): error C2065: 'kMaxVarintBytes' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(1053): error C3861: 'ReadUBitLong': identifier not found
+d:\source2011\src\tier1\checksum_md5.cpp(274): error C2143: syntax error : missing ',' before '&'
+d:\source2011\src\tier1\bitbuf.cpp(1061): error C2039: 'ReadSignedVarInt32' : is not a member of 'bf_read'
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see declaration of 'bf_read'
+d:\source2011\src\tier1\checksum_md5.cpp(276): error C2065: 'data' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(1064): error C2653: 'bitbuf' : is not a class or namespace name
+d:\source2011\src\tier1\checksum_md5.cpp(276): error C2228: left of '.bits' must have class/struct/union
+          type is ''unknown-type''
+d:\source2011\src\tier1\bitbuf.cpp(1064): error C3861: 'ZigZagDecode32': identifier not found
+d:\source2011\src\tier1\bitbuf.cpp(1067): error C2039: 'ReadSignedVarInt64' : is not a member of 'bf_read'
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see declaration of 'bf_read'
+d:\source2011\src\tier1\bitbuf.cpp(1070): error C2653: 'bitbuf' : is not a class or namespace name
+d:\source2011\src\tier1\bitbuf.cpp(1070): error C3861: 'ZigZagDecode64': identifier not found
+d:\source2011\src\tier1\bitbuf.cpp(1073): error C2039: 'ReadBitLong' : is not a member of 'bf_read'
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see declaration of 'bf_read'
+d:\source2011\src\tier1\bitbuf.cpp(1076): error C3861: 'ReadSBitLong': identifier not found
+d:\source2011\src\tier1\bitbuf.cpp(1078): error C3861: 'ReadUBitLong': identifier not found
+d:\source2011\src\tier1\bitbuf.cpp(1084): error C2509: 'ReadBitCoord' : member function not declared in 'bf_read'
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see declaration of 'bf_read'
+d:\source2011\src\tier1\bitbuf.cpp(1127): error C2509: 'ReadBitCoordMP' : member function not declared in 'bf_read'
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see declaration of 'bf_read'
+d:\source2011\src\tier1\checksum_md5.cpp(276): error C2065: 'compare' : undeclared identifier
+d:\source2011\src\tier1\bitbuf.cpp(1212): error C2039: 'ReadBitCoordBits' : is not a member of 'bf_read'
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see declaration of 'bf_read'
+d:\source2011\src\tier1\bitbuf.cpp(1218): error C3861: 'ReadUBitLong': identifier not found
+d:\source2011\src\tier1\checksum_md5.cpp(276): error C2228: left of '.bits' must have class/struct/union
+          type is ''unknown-type''
+d:\source2011\src\tier1\bitbuf.cpp(1228): error C3861: 'ReadUBitLong': identifier not found
+d:\source2011\src\tier1\bitbuf.cpp(1231): error C2039: 'ReadBitCoordMPBits' : is not a member of 'bf_read'
+          d:\source2011\src\public\tier1\bitbuf.h(1496) : see declaration of 'bf_read'
+d:\source2011\src\tier1\checksum_md5.cpp(280): error C2653: 'MD5Value_t' : is not a class or namespace name
+d:\source2011\src\tier1\bitbuf.cpp(1237): error C3861: 'ReadUBitLong': identifier not found
+d:\source2011\src\tier1\bitbuf.cpp(1237): fatal error C1003: error count exceeds 100; stopping compilation
+d:\source2011\src\tier1\checksum_md5.cpp(282): error C2070: ''unknown-type'': illegal sizeof operand
+d:\source2011\src\tier1\checksum_md5.cpp(286): error C2653: 'MD5Value_t' : is not a class or namespace name
+d:\source2011\src\tier1\checksum_md5.cpp(287): error C2270: 'IsZero' : modifiers not allowed on nonmember functions
+d:\source2011\src\tier1\checksum_md5.cpp(288): error C2070: ''unknown-type'': illegal sizeof operand
+d:\source2011\src\tier1\checksum_md5.cpp(298): error C2061: syntax error : identifier 'MD5Value_t'
+d:\source2011\src\tier1\checksum_md5.cpp(304): error C2065: 'md5Result' : undeclared identifier
+d:\source2011\src\tier1\checksum_md5.cpp(304): error C2228: left of '.bits' must have class/struct/union
+          type is ''unknown-type''
+  lzmaDecoder.cpp
+  mempool.cpp
+  memstack.cpp
+  NetAdr.cpp
+d:\source2011\src\tier1\lzmadecoder.cpp(733): error C2511: 'unsigned int CLZMA::Uncompress(unsigned char *,unsigned char *)' : overloaded member function not found in 'CLZMA'
+          d:\source2011\src\public\tier1\lzmadecoder.h(34) : see declaration of 'CLZMA'
+  newbitbuf.cpp
+d:\source2011\src\tier1\commandbuffer.cpp(235): error C3861: 'IsWaitEnabled': identifier not found
+  rangecheckedvar.cpp
+d:\source2011\src\tier1\convar.cpp(510): error C2061: syntax error : identifier 'FnCommandCallbackVoid_t'
+d:\source2011\src\tier1\convar.cpp(511): error C2511: 'ConCommand::ConCommand(const char *)' : overloaded member function not found in 'ConCommand'
+          d:\source2011\src\public\tier1\convar.h(274) : see declaration of 'ConCommand'
+d:\source2011\src\tier1\convar.cpp(678): error C2065: 'm_pszString' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(680): error C2065: 'm_pszString' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(680): error C2541: 'delete' : cannot delete objects that are not pointers
+d:\source2011\src\tier1\convar.cpp(681): error C2065: 'm_pszString' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(690): error C2511: 'void ConVar::InstallChangeCallback(FnChangeCallback_t)' : overloaded member function not found in 'ConVar'
+          d:\source2011\src\public\tier1\convar.h(331) : see declaration of 'ConVar'
+d:\source2011\src\tier1\convar.cpp(769): error C2065: 'm_fValue' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(784): error C2065: 'm_fValue' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(785): error C2065: 'm_nValue' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(785): error C2065: 'm_fValue' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(801): error C2065: 'm_StringLength' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(802): error C2065: 'm_pszString' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(802): error C2065: 'm_StringLength' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(808): error C2065: 'm_StringLength' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(810): error C2065: 'm_pszString' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(812): error C2065: 'm_pszString' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(812): error C2541: 'delete' : cannot delete objects that are not pointers
+d:\source2011\src\tier1\convar.cpp(815): error C2065: 'm_pszString' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(816): error C2065: 'm_StringLength' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(819): error C2065: 'm_pszString' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(823): error C2065: 'm_pszString' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(827): error C2065: 'm_fnChangeCallback' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(829): error C3861: 'm_fnChangeCallback': identifier not found
+d:\source2011\src\tier1\convar.cpp(865): error C2065: 'm_fValue' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(883): error C2065: 'm_fValue' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(884): error C2065: 'm_fValue' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(885): error C2065: 'm_nValue' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(885): error C2065: 'm_fValue' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(890): error C2065: 'm_fValue' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(905): error C2065: 'm_nValue' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(926): error C2065: 'm_fValue' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(927): error C2065: 'm_fValue' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(928): error C2065: 'm_nValue' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(933): error C2065: 'm_nValue' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(952): error C3861: 'SetDefault': identifier not found
+d:\source2011\src\tier1\convar.cpp(954): error C2065: 'm_StringLength' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(955): error C2065: 'm_pszString' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(955): error C2065: 'm_StringLength' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(956): error C2065: 'm_pszString' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(956): error C2065: 'm_StringLength' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(963): error C2065: 'm_fnChangeCallback' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(965): error C2065: 'm_fValue' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(965): error C2065: 'm_pszString' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(966): error C2065: 'm_nValue' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(966): error C2065: 'm_pszString' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(969): error C2065: 'm_fValue' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(974): error C2065: 'm_fValue' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(1052): error C2039: 'SetDefault' : is not a member of 'ConVar'
+          d:\source2011\src\public\tier1\convar.h(331) : see declaration of 'ConVar'
+d:\source2011\src\tier1\convar.cpp(1055): error C2065: 'm_pszDefaultValue' : undeclared identifier
+d:\source2011\src\tier1\convar.cpp(1203): error C3861: 'assert': identifier not found
+d:\source2011\src\tier1\diff.cpp(222): error C3861: 'min': identifier not found
+d:\source2011\src\tier1\diff.cpp(223): error C3861: 'min': identifier not found
+d:\source2011\src\tier1\diff.cpp(358): error C3861: 'min': identifier not found
+d:\source2011\src\tier1\diff.cpp(359): error C3861: 'min': identifier not found
+d:\source2011\src\tier1\diff.cpp(470): error C3861: 'min': identifier not found
+  reliabletimer.cpp
+  snappy-sinksource.cpp
+d:\source2011\src\tier1\kvpacker.cpp(10): fatal error C1083: Cannot open include file: 'kvpacker.h': No such file or directory
+d:\source2011\src\tier1\snappy-sinksource.cpp(31): fatal error C1083: Cannot open include file: 'snappy-sinksource.h': No such file or directory
+  snappy-stubs-internal.cpp
+  snappy.cpp
+d:\source2011\src\tier1\reliabletimer.cpp(7): fatal error C1083: Cannot open include file: 'tier1/reliabletimer.h': No such file or directory
+  sparsematrix.cpp
+d:\source2011\src\tier1\snappy.cpp(29): fatal error C1083: Cannot open include file: 'snappy.h': No such file or directory
+  splitstring.cpp
+d:\source2011\src\tier1\mempool.cpp(160): error C2065: 'UTLMEMORYPOOL_GROW_SLOW' : undeclared identifier
+d:\source2011\src\tier1\mempool.cpp(166): error C2065: 'UTLMEMORYPOOL_GROW_NONE' : undeclared identifier
+d:\source2011\src\tier1\mempool.cpp(235): error C2065: 'UTLMEMORYPOOL_GROW_NONE' : undeclared identifier
+d:\source2011\src\tier1\mempool.cpp(252): error C3861: 'max': identifier not found
+  stringpool.cpp
+d:\source2011\src\tier1\sparsematrix.cpp(5): fatal error C1083: Cannot open include file: 'tier1/sparsematrix.h': No such file or directory
+  strtools.cpp
+  tier1.cpp
+  tokenreader.cpp
+  uniqueid.cpp
+d:\source2011\src\tier1\tokenreader.cpp(11): fatal error C1083: Cannot open include file: 'tokenreader.h': No such file or directory
+  utlbuffer.cpp
+d:\source2011\src\tier1\ilocalize.cpp(9): fatal error C1083: Cannot open include file: 'tier1/ilocalize.h': No such file or directory
+  utlbufferutil.cpp
+d:\source2011\src\tier1\stringpool.cpp(30): error C2511: 'CStringPool::CStringPool(void)' : overloaded member function not found in 'CStringPool'
+          d:\source2011\src\public\tier1\stringpool.h(31) : see declaration of 'CStringPool'
+d:\source2011\src\tier1\stringpool.cpp(335): fatal error C1004: unexpected end-of-file found
+  utlstring.cpp
+d:\source2011\src\tier1\interface.cpp(46): error C2039: 's_pInterfaceRegs' : is not a member of 'InterfaceReg'
+          d:\source2011\src\public\tier1\interface.h(69) : see declaration of 'InterfaceReg'
+d:\source2011\src\tier1\interface.cpp(72): error C2039: 's_pInterfaceRegs' : is not a member of 'InterfaceReg'
+          d:\source2011\src\public\tier1\interface.h(69) : see declaration of 'InterfaceReg'
+d:\source2011\src\tier1\interface.cpp(169): error C2061: syntax error : identifier 'Sys_Flags'
+d:\source2011\src\tier1\interface.cpp(174): error C2065: 'flags' : undeclared identifier
+d:\source2011\src\tier1\interface.cpp(174): error C2065: 'SYS_NOLOAD' : undeclared identifier
+d:\source2011\src\tier1\interface.cpp(183): error C2065: 'SYS_NOFLAGS' : undeclared identifier
+d:\source2011\src\tier1\interface.cpp(189): error C2061: syntax error : identifier 'Sys_Flags'
+d:\source2011\src\tier1\interface.cpp(218): error C2065: 'flags' : undeclared identifier
+d:\source2011\src\tier1\interface.cpp(234): error C3861: 'ThreadWaitForObject': identifier not found
+d:\source2011\src\tier1\interface.cpp(234): fatal error C1903: unable to recover from previous error(s); stopping compilation
+  utlsymbol.cpp
+d:\source2011\src\tier1\netadr.cpp(182): error C2039: 'GetIPNetworkByteOrder' : is not a member of 'netadr_s'
+          d:\source2011\src\public\tier1\netadr.h(27) : see declaration of 'netadr_s'
+d:\source2011\src\tier1\netadr.cpp(183): error C2270: 'GetIPNetworkByteOrder' : modifiers not allowed on nonmember functions
+d:\source2011\src\tier1\netadr.cpp(184): error C2065: 'ip' : undeclared identifier
+d:\source2011\src\tier1\netadr.cpp(187): error C2039: 'GetIPHostByteOrder' : is not a member of 'netadr_s'
+          d:\source2011\src\public\tier1\netadr.h(27) : see declaration of 'netadr_s'
+d:\source2011\src\tier1\netadr.cpp(188): error C2270: 'GetIPHostByteOrder' : modifiers not allowed on nonmember functions
+d:\source2011\src\tier1\utlbuffer.cpp(1704): error C2039: 'Swap' : is not a member of 'CUtlBuffer'
+          d:\source2011\src\public\tier1\utlbuffer.h(126) : see declaration of 'CUtlBuffer'
+d:\source2011\src\tier1\utlbuffer.cpp(1706): error C2065: 'm_Get' : undeclared identifier
+d:\source2011\src\tier1\utlbuffer.cpp(1706): error C2248: 'CUtlBuffer::m_Get' : cannot access protected member declared in class 'CUtlBuffer'
+          d:\source2011\src\public\tier1\utlbuffer.h(428) : see declaration of 'CUtlBuffer::m_Get'
+          d:\source2011\src\public\tier1\utlbuffer.h(126) : see declaration of 'CUtlBuffer'
+d:\source2011\src\tier1\utlbuffer.cpp(1707): error C2065: 'm_Put' : undeclared identifier
+d:\source2011\src\tier1\utlbuffer.cpp(1707): error C2248: 'CUtlBuffer::m_Put' : cannot access protected member declared in class 'CUtlBuffer'
+          d:\source2011\src\public\tier1\utlbuffer.h(429) : see declaration of 'CUtlBuffer::m_Put'
+          d:\source2011\src\public\tier1\utlbuffer.h(126) : see declaration of 'CUtlBuffer'
+d:\source2011\src\tier1\utlbuffer.cpp(1708): error C2065: 'm_nMaxPut' : undeclared identifier
+d:\source2011\src\tier1\utlbuffer.cpp(1708): error C2248: 'CUtlBuffer::m_nMaxPut' : cannot access protected member declared in class 'CUtlBuffer'
+          d:\source2011\src\public\tier1\utlbuffer.h(439) : see declaration of 'CUtlBuffer::m_nMaxPut'
+          d:\source2011\src\public\tier1\utlbuffer.h(126) : see declaration of 'CUtlBuffer'
+d:\source2011\src\tier1\utlbuffer.cpp(1709): error C2065: 'm_Error' : undeclared identifier
+d:\source2011\src\tier1\utlbuffer.cpp(1709): error C2248: 'CUtlBuffer::m_Error' : cannot access protected member declared in class 'CUtlBuffer'
+          d:\source2011\src\public\tier1\utlbuffer.h(431) : see declaration of 'CUtlBuffer::m_Error'
+          d:\source2011\src\public\tier1\utlbuffer.h(126) : see declaration of 'CUtlBuffer'
+d:\source2011\src\tier1\utlbuffer.cpp(1710): error C2065: 'm_Memory' : undeclared identifier
+d:\source2011\src\tier1\utlbuffer.cpp(1710): error C2228: left of '.Swap' must have class/struct/union
+          type is ''unknown-type''
+d:\source2011\src\tier1\utlbuffer.cpp(1710): error C2248: 'CUtlBuffer::m_Memory' : cannot access protected member declared in class 'CUtlBuffer'
+          d:\source2011\src\public\tier1\utlbuffer.h(427) : see declaration of 'CUtlBuffer::m_Memory'
+          d:\source2011\src\public\tier1\utlbuffer.h(126) : see declaration of 'CUtlBuffer'
+d:\source2011\src\tier1\utlbuffer.cpp(1717): error C2039: 'Swap' : is not a member of 'CUtlBuffer'
+          d:\source2011\src\public\tier1\utlbuffer.h(126) : see declaration of 'CUtlBuffer'
+d:\source2011\src\tier1\utlbuffer.cpp(1718): error C2365: 'Swap' : redefinition; previous definition was 'formerly unknown identifier'
+d:\source2011\src\tier1\utlbuffer.cpp(1719): error C2065: 'm_Get' : undeclared identifier
+d:\source2011\src\tier1\utlbuffer.cpp(1720): error C2065: 'm_Put' : undeclared identifier
+d:\source2011\src\tier1\utlbuffer.cpp(1721): error C2065: 'm_nMaxPut' : undeclared identifier
+d:\source2011\src\tier1\utlbuffer.cpp(1722): error C2065: 'm_Error' : undeclared identifier
+d:\source2011\src\tier1\utlbuffer.cpp(1723): error C2065: 'm_Memory' : undeclared identifier
+d:\source2011\src\tier1\utlbuffer.cpp(1723): error C2228: left of '.Swap' must have class/struct/union
+          type is ''unknown-type''
+d:\source2011\src\tier1\utlstring.cpp(226): error C2039: 'ToLower' : is not a member of 'CUtlString'
+          d:\source2011\src\public\tier1\utlstring.h(114) : see declaration of 'CUtlString'
+d:\source2011\src\tier1\utlstring.cpp(228): error C3861: 'Length': identifier not found
+d:\source2011\src\tier1\utlstring.cpp(230): error C2065: 'm_Storage' : undeclared identifier
+d:\source2011\src\tier1\utlstring.cpp(230): error C2065: 'm_Storage' : undeclared identifier
+d:\source2011\src\tier1\utlstring.cpp(235): error C2039: 'ToUpper' : is not a member of 'CUtlString'
+          d:\source2011\src\public\tier1\utlstring.h(114) : see declaration of 'CUtlString'
+d:\source2011\src\tier1\utlstring.cpp(237): error C3861: 'Length': identifier not found
+d:\source2011\src\tier1\utlstring.cpp(239): error C2065: 'm_Storage' : undeclared identifier
+d:\source2011\src\tier1\utlstring.cpp(239): error C2065: 'm_Storage' : undeclared identifier
+d:\source2011\src\tier1\utlstring.cpp(336): error C2039: 'MatchesPattern' : is not a member of 'CUtlString'
+          d:\source2011\src\public\tier1\utlstring.h(114) : see declaration of 'CUtlString'
+d:\source2011\src\tier1\utlstring.cpp(338): error C3861: 'String': identifier not found
+d:\source2011\src\tier1\utlstring.cpp(398): error C2065: 'PATTERN_DIRECTORY' : undeclared identifier
+d:\source2011\src\tier1\utlstring.cpp(545): error C2039: 'Append' : is not a member of 'CUtlString'
+          d:\source2011\src\public\tier1\utlstring.h(114) : see declaration of 'CUtlString'
+d:\source2011\src\tier1\utlstring.cpp(547): error C2355: 'this' : can only be referenced inside non-static member functions
+d:\source2011\src\tier1\strtools.cpp(132): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(139): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(151): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(161): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(162): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(187): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(188): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(210): error C2146: syntax error : missing ')' before identifier 'start'
+d:\source2011\src\tier1\strtools.cpp(210): error C2065: 'start' : undeclared identifier
+d:\source2011\src\tier1\strtools.cpp(210): error C2365: '_V_strupr' : redefinition; previous definition was 'function'
+          d:\source2011\src\public\tier1\strtools.h(56) : see declaration of '_V_strupr'
+d:\source2011\src\tier1\strtools.cpp(210): error C2059: syntax error : ')'
+d:\source2011\src\tier1\strtools.cpp(211): error C2143: syntax error : missing ';' before '{'
+d:\source2011\src\tier1\strtools.cpp(211): error C2447: '{' : missing function header (old-style formal list?)
+d:\source2011\src\tier1\strtools.cpp(224): error C2146: syntax error : missing ')' before identifier 'start'
+d:\source2011\src\tier1\strtools.cpp(224): error C2065: 'start' : undeclared identifier
+d:\source2011\src\tier1\strtools.cpp(224): error C2365: '_V_strlower' : redefinition; previous definition was 'function'
+          d:\source2011\src\public\tier1\strtools.h(57) : see declaration of '_V_strlower'
+d:\source2011\src\tier1\strtools.cpp(224): error C2059: syntax error : ')'
+d:\source2011\src\tier1\strtools.cpp(225): error C2143: syntax error : missing ';' before '{'
+d:\source2011\src\tier1\strtools.cpp(225): error C2447: '{' : missing function header (old-style formal list?)
+d:\source2011\src\tier1\strtools.cpp(241): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(260): error C2146: syntax error : missing ')' before identifier 'str1'
+d:\source2011\src\tier1\strtools.cpp(260): error C2065: 'str1' : undeclared identifier
+d:\source2011\src\tier1\strtools.cpp(260): error C2365: '_V_stricmp' : redefinition; previous definition was 'function'
+          d:\source2011\src\public\tier0\platform.h(1588) : see declaration of '_V_stricmp'
+d:\source2011\src\tier1\strtools.cpp(260): error C2062: type 'const char' unexpected
+d:\source2011\src\tier1\strtools.cpp(260): error C2059: syntax error : ')'
+d:\source2011\src\tier1\strtools.cpp(261): error C2143: syntax error : missing ';' before '{'
+d:\source2011\src\tier1\strtools.cpp(261): error C2447: '{' : missing function header (old-style formal list?)
+d:\source2011\src\tier1\strtools.cpp(321): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(322): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(341): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(342): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(354): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(355): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(368): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(429): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(487): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(619): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(620): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(662): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(663): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(674): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(675): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(744): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(838): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(867): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(886): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(920): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(921): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(944): error C3861: 'ANALYZE_SUPPRESS': identifier not found
+d:\source2011\src\tier1\strtools.cpp(949): error C2065: 'cchDest' : undeclared identifier
+d:\source2011\src\tier1\strtools.cpp(949): error C3861: 'INOUT_Z_CAP': identifier not found
+d:\source2011\src\tier1\strtools.cpp(949): error C2144: syntax error : 'wchar_t' should be preceded by ')'
+d:\source2011\src\tier1\strtools.cpp(949): error C2059: syntax error : ')'
+d:\source2011\src\tier1\strtools.cpp(950): error C2143: syntax error : missing ';' before '{'
+d:\source2011\src\tier1\strtools.cpp(950): error C2447: '{' : missing function header (old-style formal list?)
+d:\source2011\src\tier1\strtools.cpp(1357): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(1484): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(1540): error C2783: 'void AssertValidStringPtr(const tchar *,int)' : could not deduce template argument for 'T'
+          d:\source2011\src\public\tier0\dbg.h(359) : see declaration of 'AssertValidStringPtr'
+d:\source2011\src\tier1\strtools.cpp(2923): error C3861: 'Plat_localtime': identifier not found
+d:\source2011\src\tier1\strtools.cpp(2967): error C2228: left of '.ToString' must have class/struct/union
+          type is ''unknown-type''
+d:\source2011\src\tier1\strtools.cpp(2967): error C3861: 'CStrAutoEncode': identifier not found
+d:\source2011\src\tier1\strtools.cpp(2975): error C2228: left of '.ToString' must have class/struct/union
+          type is ''unknown-type''
+d:\source2011\src\tier1\strtools.cpp(2975): error C3861: 'CStrAutoEncode': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(38): error C2039: 's_pfGetSymbolForString' : is not a member of 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(38): error C2039: 'GetSymbolForStringClassic' : is not a member of 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(38): error C2065: 'GetSymbolForStringClassic' : undeclared identifier
+d:\source2011\src\tier1\keyvalues.cpp(39): error C2039: 's_pfGetStringForSymbol' : is not a member of 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(39): error C2039: 'GetStringForSymbolClassic' : is not a member of 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(39): error C2065: 'GetStringForSymbolClassic' : undeclared identifier
+d:\source2011\src\tier1\keyvalues.cpp(40): error C2143: syntax error : missing ';' before '*'
+d:\source2011\src\tier1\keyvalues.cpp(40): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\source2011\src\tier1\keyvalues.cpp(40): error C2039: 's_pGrowableStringTable' : is not a member of 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(40): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\source2011\src\tier1\keyvalues.cpp(100): error C2039: 'CallGetStringForSymbol' : is not a member of 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(100): error C3861: 'CallGetStringForSymbol': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(104): error C2039: 'CallGetStringForSymbol' : is not a member of 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(104): error C3861: 'CallGetStringForSymbol': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(312): error C2039: 'SetUseGrowableStringTable' : is not a member of 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(316): error C2039: 'GetStringForSymbolGrowable' : is not a member of 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(316): error C2065: 'GetStringForSymbolGrowable' : undeclared identifier
+d:\source2011\src\tier1\keyvalues.cpp(317): error C2039: 'GetSymbolForStringGrowable' : is not a member of 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(317): error C2065: 'GetSymbolForStringGrowable' : undeclared identifier
+d:\source2011\src\tier1\keyvalues.cpp(321): error C2061: syntax error : identifier 'CKeyValuesGrowableStringTable'
+d:\source2011\src\tier1\keyvalues.cpp(326): error C2039: 'GetStringForSymbolClassic' : is not a member of 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(326): error C2065: 'GetStringForSymbolClassic' : undeclared identifier
+d:\source2011\src\tier1\keyvalues.cpp(327): error C2039: 'GetSymbolForStringClassic' : is not a member of 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(327): error C2065: 'GetSymbolForStringClassic' : undeclared identifier
+d:\source2011\src\tier1\keyvalues.cpp(338): error C2039: 'GetSymbolForStringClassic' : is not a member of 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(343): error C2039: 'GetStringForSymbolClassic' : is not a member of 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(348): error C2039: 'GetSymbolForStringGrowable' : is not a member of 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(350): error C2227: left of '->GetSymbolForString' must point to class/struct/union/generic type
+          type is 'int *'
+d:\source2011\src\tier1\keyvalues.cpp(353): error C2039: 'GetStringForSymbolGrowable' : is not a member of 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(355): error C2227: left of '->GetStringForSymbol' must point to class/struct/union/generic type
+          type is 'int *'
+d:\source2011\src\tier1\keyvalues.cpp(438): warning C4245: '=' : conversion from 'int' to 'uint32', signed/unsigned mismatch
+d:\source2011\src\tier1\keyvalues.cpp(450): error C2065: 'm_bEvaluateConditionals' : undeclared identifier
+d:\source2011\src\tier1\keyvalues.cpp(453): error C2065: 'unused' : undeclared identifier
+d:\source2011\src\tier1\keyvalues.cpp(453): error C2065: 'unused' : undeclared identifier
+d:\source2011\src\tier1\keyvalues.cpp(453): error C2070: ''unknown-type'': illegal sizeof operand
+d:\source2011\src\tier1\keyvalues.cpp(499): error C2511: 'void KeyValues::RecursiveSaveToFile(CUtlBuffer &,int,bool,bool)' : overloaded member function not found in 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(624): error C2039: 'UsesConditionals' : is not a member of 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(626): error C2065: 'm_bEvaluateConditionals' : undeclared identifier
+d:\source2011\src\tier1\keyvalues.cpp(634): error C2511: 'bool KeyValues::LoadFromFile(IBaseFileSystem *,const char *,const char *)' : overloaded member function not found in 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(674): error C2511: 'bool KeyValues::SaveToFile(IBaseFileSystem *,const char *,const char *,bool,bool)' : overloaded member function not found in 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(750): error C2511: 'void KeyValues::RecursiveSaveToFile(IBaseFileSystem *,FileHandle_t,CUtlBuffer *,int,bool,bool)' : overloaded member function not found in 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(786): error C2039: 'SaveKeyToFile' : is not a member of 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(788): error C2248: 'KeyValues::m_pSub' : cannot access private member declared in class 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(347) : see declaration of 'KeyValues::m_pSub'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(790): error C2661: 'KeyValues::RecursiveSaveToFile' : no overloaded function takes 6 arguments
+d:\source2011\src\tier1\keyvalues.cpp(796): error C2248: 'KeyValues::m_iDataType' : cannot access private member declared in class 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(342) : see declaration of 'KeyValues::m_iDataType'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(798): error C2065: 'TYPE_STRING' : undeclared identifier
+d:\source2011\src\tier1\keyvalues.cpp(798): error C2051: case expression not constant
+d:\source2011\src\tier1\keyvalues.cpp(800): error C2248: 'KeyValues::m_sValue' : cannot access private member declared in class 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(330) : see declaration of 'KeyValues::m_sValue'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(800): error C2248: 'KeyValues::m_sValue' : cannot access private member declared in class 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(330) : see declaration of 'KeyValues::m_sValue'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(802): error C3861: 'WriteIndents': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(803): error C3861: 'InternalWrite': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(804): error C3861: 'WriteConvertedString': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(805): error C3861: 'InternalWrite': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(807): error C2248: 'KeyValues::m_sValue' : cannot access private member declared in class 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(330) : see declaration of 'KeyValues::m_sValue'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(807): error C3861: 'WriteConvertedString': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(809): error C3861: 'InternalWrite': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(813): error C2065: 'TYPE_WSTRING' : undeclared identifier
+d:\source2011\src\tier1\keyvalues.cpp(813): error C2051: case expression not constant
+d:\source2011\src\tier1\keyvalues.cpp(815): error C2248: 'KeyValues::m_wsValue' : cannot access private member declared in class 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(331) : see declaration of 'KeyValues::m_wsValue'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(819): error C2248: 'KeyValues::m_wsValue' : cannot access private member declared in class 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(331) : see declaration of 'KeyValues::m_wsValue'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(822): error C3861: 'WriteIndents': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(823): error C3861: 'InternalWrite': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(824): error C3861: 'InternalWrite': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(825): error C3861: 'InternalWrite': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(827): error C3861: 'WriteConvertedString': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(829): error C3861: 'InternalWrite': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(835): error C2065: 'TYPE_INT' : undeclared identifier
+d:\source2011\src\tier1\keyvalues.cpp(835): error C2051: case expression not constant
+d:\source2011\src\tier1\keyvalues.cpp(837): error C3861: 'WriteIndents': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(838): error C3861: 'InternalWrite': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(839): error C3861: 'InternalWrite': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(840): error C3861: 'InternalWrite': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(843): error C2248: 'KeyValues::m_iValue' : cannot access private member declared in class 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(336) : see declaration of 'KeyValues::m_iValue'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(845): error C3861: 'InternalWrite': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(846): error C3861: 'InternalWrite': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(850): error C2065: 'TYPE_UINT64' : undeclared identifier
+d:\source2011\src\tier1\keyvalues.cpp(850): error C2051: case expression not constant
+d:\source2011\src\tier1\keyvalues.cpp(852): error C3861: 'WriteIndents': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(853): error C3861: 'InternalWrite': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(854): error C3861: 'InternalWrite': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(855): error C3861: 'InternalWrite': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(860): error C2248: 'KeyValues::m_sValue' : cannot access private member declared in class 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(330) : see declaration of 'KeyValues::m_sValue'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(865): error C3861: 'InternalWrite': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(866): error C3861: 'InternalWrite': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(870): error C2065: 'TYPE_FLOAT' : undeclared identifier
+d:\source2011\src\tier1\keyvalues.cpp(870): error C2051: case expression not constant
+d:\source2011\src\tier1\keyvalues.cpp(872): error C3861: 'WriteIndents': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(873): error C3861: 'InternalWrite': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(874): error C3861: 'InternalWrite': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(875): error C3861: 'InternalWrite': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(878): error C2248: 'KeyValues::m_flValue' : cannot access private member declared in class 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(337) : see declaration of 'KeyValues::m_flValue'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(880): error C3861: 'InternalWrite': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(881): error C3861: 'InternalWrite': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(884): error C2065: 'TYPE_COLOR' : undeclared identifier
+d:\source2011\src\tier1\keyvalues.cpp(884): error C2051: case expression not constant
+d:\source2011\src\tier1\keyvalues.cpp(890): warning C4065: switch statement contains 'default' but no 'case' labels
+d:\source2011\src\tier1\keyvalues.cpp(901): warning C4389: '==' : signed/unsigned mismatch
+d:\source2011\src\tier1\keyvalues.cpp(950): warning C4389: '==' : signed/unsigned mismatch
+d:\source2011\src\tier1\keyvalues.cpp(971): error C2039: 'UsesConditionals' : is not a member of 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(971): error C2065: 'm_bEvaluateConditionals' : undeclared identifier
+d:\source2011\src\tier1\keyvalues.cpp(1030): error C3861: 'CreateKeyUsingKnownLastChild': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(1039): error C3861: 'FindLastSubKey': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(1040): error C3861: 'CreateKeyUsingKnownLastChild': identifier not found
+d:\source2011\src\tier1\keyvalues.cpp(1044): error C2039: 'CreateKeyUsingKnownLastChild' : is not a member of 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(1049): error C2065: 'm_bHasEscapeSequences' : undeclared identifier
+d:\source2011\src\tier1\keyvalues.cpp(1050): error C2039: 'UsesConditionals' : is not a member of 'KeyValues'
+          d:\source2011\src\public\tier1\keyvalues.h(71) : see declaration of 'KeyValues'
+d:\source2011\src\tier1\keyvalues.cpp(1050): error C2065: 'm_bEvaluateConditionals' : undeclared identifier
+d:\source2011\src\tier1\keyvalues.cpp(1050): fatal error C1003: error count exceeds 100; stopping compilation
+d:\source2011\src\tier1\utlsymbol.cpp(16): fatal error C1083: Cannot open include file: 'utlhashtable.h': No such file or directory
