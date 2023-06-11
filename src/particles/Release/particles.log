@@ -1,4 +1,0 @@
-﻿  particles.cpp
-  patch.cpp
-patch.cpp(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  particles.vcxproj -> D:\source-sdk-2011\src\particles\..\lib\public\.\particles.lib
