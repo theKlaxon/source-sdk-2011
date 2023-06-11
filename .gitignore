@@ -1,6 +1,8 @@
 # Prerequisites
 *.d
-*.vs
+*.exp
+*.ilk
+*.pdb
 
 # Compiled Object files
 *.slo
@@ -24,3 +26,15 @@
 *.exe
 *.out
 *.app
+
+# Folders
+.vs/
+src/game/client/Debug_sdk/
+src/game/client/Release_sdk/
+src/game/server/Debug_sdk/
+src/game/server/Release_sdk/
+src/game/client.dll
+src/game/server.dll
+
+game/source2011/bin/client.lib
+game/source2011/bin/server.lib

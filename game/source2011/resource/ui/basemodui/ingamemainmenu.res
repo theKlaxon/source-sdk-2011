@@ -1,0 +1,127 @@
+"Resource/UI/InGameMainMenu.res"
+{
+	"InGameMainMenu"
+	{
+		"ControlName"			"Frame"
+		"fieldName"				"InGameMainMenu"
+		"xpos"					"0"
+		"ypos"					"0"
+		"wide"					"800"
+		"tall"					"f0"
+		"visible"				"1"
+		"enabled"				"1"
+		"tabPosition"			"1"
+		"PaintBackground"	"0"
+	}
+				
+	"BtnReturnToGame"
+	{
+		"ControlName"			"BaseModHybridButton"
+		"fieldName"				"BtnReturnToGame"
+		"xpos"					"26"
+		"ypos"					"242"
+		"wide"					"350"
+		"tall"					"20"
+		"visible"				"1"
+		"enabled"				"1"
+		"tabPosition"			"1"
+		"navUp"					"BtnExitToMainMenu"
+		"navDown"				"BtnRestartLevel"
+		"labelText"				"#PORTAL2_Continue"
+		"style"					"MainMenuButton"
+		"command"				"ReturnToGame"
+		"ActivationType"		"1"
+	}
+
+	"BtnRestartLevel"
+	{
+		"ControlName"			"BaseModHybridButton"
+		"fieldName"				"BtnRestartLevel"
+		"xpos"					"26"
+		"ypos"					"284"
+		"wide"					"450"
+		"tall"					"20"
+		"visible"				"1"
+		"enabled"				"1"
+		"tabPosition"			"0"
+		"navUp"					"BtnReturnToGame"
+		"navDown"				"BtnSave"
+		"labelText"				"#PORTAL2_BeginAgain"
+		"style"					"MainMenuButton"
+		"command"				"RestartLevel"
+		"ActivationType"		"1"
+	}
+
+	"BtnSave"
+	{
+		"ControlName"			"BaseModHybridButton"
+		"fieldName"				"BtnSave"
+		"xpos"					"26"
+		"ypos"					"326"
+		"wide"					"450"
+		"tall"					"20"
+		"visible"				"1"
+		"enabled"				"1"
+		"tabPosition"			"0"
+		"navUp"					"BtnRestartLevel"
+		"navDown"				"BtnOptions"
+		"labelText"				"#PORTAL2_SaveGame"
+		"style"					"MainMenuButton"
+		"command"				"OpenSaveGameDialog"
+		"ActivationType"		"1"
+	}
+
+	"BtnOptions"
+	{
+		"ControlName"			"BaseModHybridButton"
+		"fieldName"				"BtnOptions"
+		"xpos"					"26"
+		"ypos"					"368"
+		"wide"					"350"
+		"tall"					"20"
+		"visible"				"1"
+		"enabled"				"1"
+		"tabPosition"			"0"
+		"navUp"					"BtnSave"
+		"navDown"				"BtnExitToMainMenu"
+		"labelText"				"#PORTAL2_MainMenu_Options"
+		"style"					"MainMenuButton"
+		"command"				"Options"
+		"ActivationType"		"1"
+	}
+
+	"BtnExitToMainMenu"
+	{
+		"ControlName"			"BaseModHybridButton"
+		"fieldName"				"BtnExitToMainMenu"
+		"xpos"					"26"
+		"ypos"					"410"
+		"wide"					"350"
+		"tall"					"20"
+		"visible"				"1"
+		"enabled"				"1"
+		"tabPosition"			"0"
+		"navUp"					"BtnOptions"
+		"navDown"				"BtnReturnToGame"
+		"labelText"				"#PORTAL2_Return"
+		"style"					"MainMenuButton"
+		"command"				"ExitToMainMenu"
+		"ActivationType"		"1"
+	}
+	
+	"LblPlaying"
+	{
+		"ControlName"		"BaseModHybridButton" // not a button
+		"fieldName"				"LblPlaying"
+		"xpos"							"26"
+		"ypos"							"48"
+		"wide"							"400"
+		"tall"								"50"
+		"autoResize"				"0"
+		"pinCorner"				"0"
+		"visible"						"1"
+		"enabled"					"0" // so it's disabled
+		"labelText"				"#TSP_IGMenu_Header"
+		"style"							"MainMenuHeader1"
+	}
+}

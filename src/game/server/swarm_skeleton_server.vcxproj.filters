@@ -22,17 +22,17 @@
     <Filter Include="Tools Framework">
       <UniqueIdentifier>{636d29da-d078-468c-a636-086177fb878e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Skeleton">
-      <UniqueIdentifier>{44c474a5-70ed-44d9-a20d-8bfa8e547899}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Skeleton\Re-includes">
-      <UniqueIdentifier>{1ce97870-aa79-4d7c-9ff1-3750d7cfa8f4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Skeleton\Shared">
-      <UniqueIdentifier>{10d1e542-f95e-4d51-9019-0fa6c3428310}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Patch">
       <UniqueIdentifier>{3b282f76-9bd5-48cc-a1ca-5a2f226f1b09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SDK">
+      <UniqueIdentifier>{44c474a5-70ed-44d9-a20d-8bfa8e547899}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SDK\Re-includes">
+      <UniqueIdentifier>{1ce97870-aa79-4d7c-9ff1-3750d7cfa8f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SDK\Shared">
+      <UniqueIdentifier>{10d1e542-f95e-4d51-9019-0fa6c3428310}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1411,13 +1411,13 @@
       <Filter>Tools Framework</Filter>
     </ClCompile>
     <ClCompile Include="fire.cpp">
-      <Filter>Source Files\Skeleton\Re-includes</Filter>
+      <Filter>Source Files\SDK\Re-includes</Filter>
     </ClCompile>
     <ClCompile Include="base_gameinterface.cpp">
-      <Filter>Source Files\Skeleton\Re-includes</Filter>
+      <Filter>Source Files\SDK\Re-includes</Filter>
     </ClCompile>
     <ClCompile Include="..\shared\predicted_viewmodel.cpp">
-      <Filter>Source Files\Skeleton\Re-includes</Filter>
+      <Filter>Source Files\SDK\Re-includes</Filter>
     </ClCompile>
     <ClCompile Include="..\..\tier1\old_patched\KeyValues.cpp">
       <Filter>Patch</Filter>
@@ -1429,37 +1429,37 @@
       <Filter>Patch</Filter>
     </ClCompile>
     <ClCompile Include="..\shared\sdk\sdk_gamemovement.cpp">
-      <Filter>Source Files\Skeleton\Shared</Filter>
+      <Filter>Source Files\SDK\Shared</Filter>
     </ClCompile>
     <ClCompile Include="..\shared\sdk\sdk_gamerules.cpp">
-      <Filter>Source Files\Skeleton\Shared</Filter>
+      <Filter>Source Files\SDK\Shared</Filter>
     </ClCompile>
     <ClCompile Include="..\shared\sdk\sdk_parsers.cpp">
-      <Filter>Source Files\Skeleton\Shared</Filter>
+      <Filter>Source Files\SDK\Shared</Filter>
     </ClCompile>
     <ClCompile Include="..\shared\sdk\sdk_usermessages.cpp">
-      <Filter>Source Files\Skeleton\Shared</Filter>
+      <Filter>Source Files\SDK\Shared</Filter>
     </ClCompile>
     <ClCompile Include="sdk\emulsion_playermove.cpp">
-      <Filter>Source Files\Skeleton</Filter>
+      <Filter>Source Files\SDK</Filter>
     </ClCompile>
     <ClCompile Include="sdk\prop_devcube.cpp">
-      <Filter>Source Files\Skeleton</Filter>
+      <Filter>Source Files\SDK</Filter>
     </ClCompile>
     <ClCompile Include="sdk\sdk_client.cpp">
-      <Filter>Source Files\Skeleton</Filter>
+      <Filter>Source Files\SDK</Filter>
     </ClCompile>
     <ClCompile Include="sdk\sdk_eventlog.cpp">
-      <Filter>Source Files\Skeleton</Filter>
+      <Filter>Source Files\SDK</Filter>
     </ClCompile>
     <ClCompile Include="sdk\sdk_pickupcontroller.cpp">
-      <Filter>Source Files\Skeleton</Filter>
+      <Filter>Source Files\SDK</Filter>
     </ClCompile>
     <ClCompile Include="sdk\sdk_player.cpp">
-      <Filter>Source Files\Skeleton</Filter>
+      <Filter>Source Files\SDK</Filter>
     </ClCompile>
     <ClCompile Include="sdk\weapon_paintgun.cpp">
-      <Filter>Source Files\Skeleton</Filter>
+      <Filter>Source Files\SDK</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -3060,20 +3060,20 @@
       <Filter>Tools Framework</Filter>
     </ClInclude>
     <ClInclude Include="fire.h">
-      <Filter>Source Files\Skeleton\Re-includes</Filter>
+      <Filter>Source Files\SDK\Re-includes</Filter>
     </ClInclude>
     <ClInclude Include="..\shared\predicted_viewmodel.h">
-      <Filter>Source Files\Skeleton\Re-includes</Filter>
+      <Filter>Source Files\SDK\Re-includes</Filter>
     </ClInclude>
     <ClInclude Include="skeleton\weapon_paintgun.h" />
     <ClInclude Include="sdk\sdk_pickupcontroller.h">
-      <Filter>Source Files\Skeleton</Filter>
+      <Filter>Source Files\SDK</Filter>
     </ClInclude>
     <ClInclude Include="sdk\sdk_player.h">
-      <Filter>Source Files\Skeleton</Filter>
+      <Filter>Source Files\SDK</Filter>
     </ClInclude>
     <ClInclude Include="sdk\weapon_paintgun.h">
-      <Filter>Source Files\Skeleton</Filter>
+      <Filter>Source Files\SDK</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
