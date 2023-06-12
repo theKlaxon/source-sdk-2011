@@ -5,7 +5,7 @@ This SDK is, at the moment, very unstable. I am still working to correct some of
 Any contributions to this SDK are welcome, and encouraged. The issues in the TODO list below are 
 my top priority at the moment. 
 
-@TODO - 
+@TODO
 	- The particles library does not function properly, particles do not show in game. 
 	- vgui_controls is curreently broken. Theres is an older (working) version included in lib/public for
 	  use while other issues are being fixed. (since the issue with vgui breaks all menus + the console)
@@ -14,7 +14,7 @@ my top priority at the moment.
 	- env_projectedtexture does not produce shadows, even with the setting turned on in hammer.
 	- the "disconnect" command will crash the game if used a second time.
 
-@Notice -
+@Notice
 	- This SDK is not a portal 2 leak. I simply adapted Alien Swarm's SDK to work with the portal 2 engine.
 	  Most of Alien Swarm's original game code has been removed from this SDK in order to create a suitable
 	  template for modders. VPC will be updated soon, as the one included in this version is out of date 
