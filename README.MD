@@ -16,6 +16,7 @@ my top priority at the moment.
 	- the "disconnect" command will crash the game if used a second time.
 
 @Notice
+
 	- This SDK is not a portal 2 leak. I simply adapted Alien Swarm's SDK to work with the portal 2 engine.
 	  Most of Alien Swarm's original game code has been removed from this SDK in order to create a suitable
 	  template for modders. VPC will be updated soon, as the one included in this version is out of date 
