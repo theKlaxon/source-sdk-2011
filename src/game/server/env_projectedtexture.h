@@ -38,13 +38,13 @@ public:
 	void InputSetLightColor( inputdata_t &inputdata );
 	void InputSetSpotlightTexture( inputdata_t &inputdata );
 	void InputSetAmbient( inputdata_t &inputdata );
+	void InputSetNearZ( inputdata_t &inputdata );
+	void InputSetFarZ( inputdata_t &inputdata );
+	void InputSetBrightnessScale( inputdata_t &inputdata );
 
 	void InitialThink( void );
 
 	CNetworkHandle( CBaseEntity, m_hTargetEntity );
-
-private:
-
 	CNetworkVar( bool, m_bState );
 	CNetworkVar( bool, m_bAlwaysUpdate );
 	CNetworkVar( float, m_flLightFOV );
@@ -64,6 +64,7 @@ private:
 	CNetworkVar( int, m_nShadowQuality );
 	CNetworkVar( float, m_flProjectionSize );
 	CNetworkVar( float, m_flRotation );
+
 };
 
 

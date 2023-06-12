@@ -4185,7 +4185,8 @@ ConVar cl_skipslowpath( "cl_skipslowpath", "0", FCVAR_CHEAT, "Set to 1 to skip a
 extern ConVar r_drawothermodels;
 static void	DrawOpaqueRenderables_ModelRenderables( int nCount, ModelRenderSystemData_t* pModelRenderables, bool bShadowDepth )
 {
-	g_pModelRenderSystem->DrawModels( pModelRenderables, nCount, bShadowDepth ? MODEL_RENDER_MODE_SHADOW_DEPTH : MODEL_RENDER_MODE_NORMAL );
+	//g_pModelRenderSystem->DrawModels( pModelRenderables, nCount, bShadowDepth ? MODEL_RENDER_MODE_SHADOW_DEPTH : MODEL_RENDER_MODE_NORMAL );
+	g_pModelRenderSystem->DrawModels( pModelRenderables, nCount, bShadowDepth ? MODEL_RENDER_MODE_RTT_SHADOWS : MODEL_RENDER_MODE_NORMAL );
 }
 
 static void	DrawOpaqueRenderables_NPCs( int nCount, CClientRenderablesList::CEntry **ppEntities, bool bShadowDepth )
@@ -5223,11 +5224,11 @@ void CShadowDepthView::Draw()
 		DrawOpaqueRenderables( true );
 	}
 
-	//if ( m_bRenderFlashlightDepthTranslucents || r_flashlightdepth_drawtranslucents.GetBool() )
-	//{
-	//	VPROF_BUDGET( "DrawTranslucentRenderables", VPROF_BUDGETGROUP_SHADOW_DEPTH_TEXTURING );
-	//	DrawTranslucentRenderables( false, true );
-	//}
+	if ( /*m_bRenderFlashlightDepthTranslucents || */r_flashlightdepth_drawtranslucents.GetBool() )
+	{
+		VPROF_BUDGET( "DrawTranslucentRenderables", VPROF_BUDGETGROUP_SHADOW_DEPTH_TEXTURING );
+		DrawTranslucentRenderables( false, true );
+	}
 
 	modelrender->ForcedMaterialOverride( 0 );
 

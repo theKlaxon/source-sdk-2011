@@ -52,7 +52,7 @@ C_EnvProjectedTexture *C_EnvProjectedTexture::Create( )
 
 	pEnt->m_flNearZ = 4.0f;
 	pEnt->m_flFarZ = 2000.0f;
-	strcpy( pEnt->m_SpotlightTextureName, "particle/rj" );
+//	strcpy( pEnt->m_SpotlightTextureName, "particle/rj" );
 	pEnt->m_bLightWorld = true;
 	pEnt->m_bLightOnlyTarget = false;
 	pEnt->m_bSimpleProjection = false;
@@ -71,6 +71,11 @@ C_EnvProjectedTexture *C_EnvProjectedTexture::Create( )
 	pEnt->m_flProjectionSize = 500.0f;
 	pEnt->m_flRotation = 0.0f;
 
+#ifdef P2_DLL
+	pEnt->m_bSimpleProjection = false;
+	pEnt->m_bEnableShadows = true;
+#endif
+
 	return pEnt;
 }
 
@@ -79,6 +84,12 @@ C_EnvProjectedTexture::C_EnvProjectedTexture( void )
 	m_LightHandle = CLIENTSHADOW_INVALID_HANDLE;
 	m_bForceUpdate = true;
 	m_pMaterial = NULL;
+
+#ifdef P2_DLL
+	m_bSimpleProjection = false;
+	m_bEnableShadows = true;
+#endif
+
 	AddToEntityList( ENTITY_LIST_SIMULATE );
 }
 
@@ -107,12 +118,7 @@ void C_EnvProjectedTexture::ShutDownLightHandle( void )
 
 void C_EnvProjectedTexture::SetMaterial( IMaterial *pMaterial )
 {
-	//m_pMaterial = pMaterial;
-	if (m_pProjectedMaterial != pMaterial)
-	{
-		m_pProjectedMaterial.Init(pMaterial);
-		pMaterial->AddRef();
-	}
+	m_pMaterial = pMaterial;
 }
 
 
@@ -136,7 +142,7 @@ void C_EnvProjectedTexture::SetRotation( float flRotation )
 	if ( m_flRotation != flRotation )
 	{
 		m_flRotation = flRotation;
-		m_bForceUpdate = true;
+//		m_bForceUpdate = true;
 	}
 }
 
@@ -149,7 +155,6 @@ void C_EnvProjectedTexture::OnDataChanged( DataUpdateType_t updateType )
 	if ( updateType == DATA_UPDATE_CREATED )
 	{
 		m_SpotlightTexture.Init( m_SpotlightTextureName, TEXTURE_GROUP_OTHER, true );
-		m_pProjectedMaterial.Init(m_SpotlightTextureName, TEXTURE_GROUP_OTHER);
 	}
 
 	m_bForceUpdate = true;
@@ -162,6 +167,11 @@ void C_EnvProjectedTexture::UpdateLight( void )
 {
 	VPROF("C_EnvProjectedTexture::UpdateLight");
 	bool bVisible = true;
+	
+#ifdef P2_DLL
+	m_bSimpleProjection = false;
+	m_bEnableShadows = true;
+#endif
 
 	Vector vLinearFloatLightColor( m_LightColor.r, m_LightColor.g, m_LightColor.b );
 	float flLinearFloatLightAlpha = m_LightColor.a;
@@ -264,7 +274,7 @@ void C_EnvProjectedTexture::UpdateLight( void )
 
 		// quickly check the proposed light's bbox against the view frustum to determine whether we
 		// should bother to create it, if it doesn't exist, or cull it, if it does.
-		if ( m_bSimpleProjection == false )
+		if ( 0/*m_bSimpleProjection == false*/ )
 		{
 #pragma message("OPTIMIZATION: this should be made SIMD")
 			// get the half-widths of the near and far planes, 
@@ -354,36 +364,20 @@ void C_EnvProjectedTexture::UpdateLight( void )
 		state.m_Color[3] = 0.0f; // fixme: need to make ambient work m_flAmbient;
 		state.m_flShadowSlopeScaleDepthBias = g_pMaterialSystemHardwareConfig->GetShadowSlopeScaleDepthBias();
 		state.m_flShadowDepthBias = g_pMaterialSystemHardwareConfig->GetShadowDepthBias();
+#ifndef P2_DLL
 		state.m_bEnableShadows = m_bEnableShadows;
-
-		extern ConVar r_flashlightdepthres;
-		state.m_flShadowMapResolution = r_flashlightdepthres.GetFloat();
-
-		if (m_bSimpleProjection)
-		{
-			state.m_pSpotlightTexture = NULL;
-			state.m_pProjectedMaterial = m_pProjectedMaterial;
-		}
-		else
-		{
-			state.m_pSpotlightTexture = m_SpotlightTexture;
-			state.m_pProjectedMaterial = NULL;
-		}
-
+#else
+		state.m_bEnableShadows = true;
+#endif
+		state.m_pSpotlightTexture = m_SpotlightTexture;
+		state.m_pProjectedMaterial = NULL; // only complain if we're using material projection
 		state.m_nSpotlightTextureFrame = m_nSpotlightTextureFrame;
 		state.m_flProjectionSize = m_flProjectionSize;
 		state.m_flProjectionRotation = m_flRotation;
-		state.m_nShadowQuality = m_nShadowQuality;
 
-		//state.m_pSpotlightTexture = m_SpotlightTexture;
-		//state.m_pProjectedMaterial = NULL; // only complain if we're using material projection
-		//state.m_nSpotlightTextureFrame = m_nSpotlightTextureFrame;
-		//state.m_flProjectionSize = m_flProjectionSize;
-		//state.m_flProjectionRotation = m_flRotation;
+		state.m_nShadowQuality = m_nShadowQuality; // Allow entity to affect shadow quality
 
-		//state.m_nShadowQuality = m_nShadowQuality; // Allow entity to affect shadow quality
-
-		if ( m_bSimpleProjection == true )
+		if ( 0/*m_bSimpleProjection == true*/ )
 		{
 			state.m_bSimpleProjection = true;
 			state.m_bOrtho = true;
@@ -441,11 +435,7 @@ void C_EnvProjectedTexture::UpdateLight( void )
 	}
 
 	g_pClientShadowMgr->SetFlashlightLightWorld( m_LightHandle, m_bLightWorld );
-
-	if ( !asw_perf_wtf.GetBool() && !m_bForceUpdate )
-	{
-		g_pClientShadowMgr->UpdateProjectedTexture( m_LightHandle, true );
-	}
+	g_pClientShadowMgr->UpdateProjectedTexture( m_LightHandle, true );
 }
 
 bool C_EnvProjectedTexture::Simulate( void )
@@ -458,11 +448,15 @@ bool C_EnvProjectedTexture::Simulate( void )
 
 bool C_EnvProjectedTexture::IsBBoxVisible( Vector vecExtentsMin, Vector vecExtentsMax )
 {
+#ifdef P2_DLL
+	return true;
+#else
 	// Z position clamped to the min height (but must be less than the max)
 	float flVisibleBBoxMinHeight = MIN( vecExtentsMax.z - 1.0f, m_flVisibleBBoxMinHeight );
 	vecExtentsMin.z = MAX( vecExtentsMin.z, flVisibleBBoxMinHeight );
 
 	// Check if the bbox is in the view
 	return !engine->CullBox( vecExtentsMin, vecExtentsMax );
+#endif
 }
 

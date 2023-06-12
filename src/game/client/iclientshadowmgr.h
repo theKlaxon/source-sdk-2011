@@ -77,6 +77,10 @@ public:
 
 	// Frees shadow depth textures for use in subsequent view/frame
 	virtual void UnlockAllShadowDepthTextures() = 0;
+
+	// p2
+	virtual bool LockShadowDepthTextureEx(FlashlightState_t* p1, CTextureReference* p2, CTextureReference* p3) = 0;
+	virtual void UnlockShadowDepthTextureEx(CTextureReference* p1) = 0;
 	
 	// Renders the shadow texture to screen...
 	virtual void RenderShadowTexture( int w, int h ) = 0;
@@ -122,7 +126,10 @@ public:
 
 	virtual void GetFrustumExtents( ClientShadowHandle_t handle, Vector &vecMin, Vector &vecMax ) = 0;
 
-	virtual void ShutdownRenderTargets( void ) =0;
+	virtual void ShutdownRenderTargets( void ) = 0;
+
+	// new for p2, but leaving as a stub since idk how to do that kinda math honestly
+	virtual void ComputeFlashlightMatrix(FlashlightState_t* p1, VMatrix* p2) {}
 };
 
 

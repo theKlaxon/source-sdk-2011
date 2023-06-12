@@ -986,10 +986,7 @@ int CModelRenderSystem::SetupStaticPropLighting( LightingList_t &lightingList, D
 	ColorMeshInfo_t **ppColorMeshInfo = (ColorMeshInfo_t**)stackalloc( nTotalModels * sizeof(ColorMeshInfo_t*) );
 	ITexture **ppEnvCubemap = (ITexture**)stackalloc( nTotalModels * sizeof(ITexture*) );
 
-	CMatRenderContextPtr pTempRenderCon(materials);
-
-	//CMatRenderData< MaterialLightingState_t > rdLightingState( m_pRenderContext, 2 * nTotalModels );
-	CMatRenderData< MaterialLightingState_t > rdLightingState( pTempRenderCon, 2 * nTotalModels );
+	CMatRenderData< MaterialLightingState_t > rdLightingState( m_pRenderContext, 2 * nTotalModels );
 	MaterialLightingState_t *pLightingState = rdLightingState.Base();
 	MaterialLightingState_t *pDecalLightingState = &rdLightingState[ nTotalModels ];
 	modelrender->ComputeStaticLightingState( nTotalModels, pLightingQuery, pLightingState, pDecalLightingState, ppColorMeshInfo, ppEnvCubemap, pColorMeshHandle );

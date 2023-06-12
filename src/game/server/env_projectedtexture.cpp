@@ -48,6 +48,9 @@ BEGIN_DATADESC( CEnvProjectedTexture )
 	DEFINE_INPUTFUNC( FIELD_COLOR32, "LightColor", InputSetLightColor ),
 	DEFINE_INPUTFUNC( FIELD_FLOAT, "Ambient", InputSetAmbient ),
 	DEFINE_INPUTFUNC( FIELD_STRING, "SpotlightTexture", InputSetSpotlightTexture ),
+	DEFINE_INPUTFUNC( FIELD_FLOAT, "BrightnessScale", InputSetBrightnessScale ),
+	DEFINE_INPUTFUNC (FIELD_FLOAT, "SetNearZ", InputSetNearZ ),
+	DEFINE_INPUTFUNC( FIELD_FLOAT, "SetFarZ", InputSetFarZ ),
 	DEFINE_THINKFUNC( InitialThink ),
 END_DATADESC()
 
@@ -67,8 +70,8 @@ IMPLEMENT_SERVERCLASS_ST( CEnvProjectedTexture, DT_EnvProjectedTexture )
 	SendPropFloat( SENDINFO( m_flAmbient ) ),
 	SendPropString( SENDINFO( m_SpotlightTextureName ) ),
 	SendPropInt( SENDINFO( m_nSpotlightTextureFrame ) ),
-	SendPropFloat( SENDINFO( m_flNearZ ), 16, SPROP_ROUNDDOWN, 0.0f,  500.0f ),
-	SendPropFloat( SENDINFO( m_flFarZ ),  18, SPROP_ROUNDDOWN, 0.0f, 1500.0f ),
+	SendPropFloat( SENDINFO( m_flNearZ ) ),
+	SendPropFloat( SENDINFO( m_flFarZ ) ),
 	SendPropInt( SENDINFO( m_nShadowQuality ), 1, SPROP_UNSIGNED ),  // Just one bit for now
 	SendPropFloat( SENDINFO( m_flProjectionSize ) ),
 	SendPropFloat( SENDINFO( m_flRotation ) ),
@@ -233,6 +236,21 @@ void CEnvProjectedTexture::InputSetSpotlightTexture( inputdata_t &inputdata )
 	Q_strcpy( m_SpotlightTextureName.GetForModify(), inputdata.value.String() );
 }
 
+void CEnvProjectedTexture::InputSetNearZ(inputdata_t &inputdata)
+{
+	m_flNearZ = inputdata.value.Float();
+}
+
+void CEnvProjectedTexture::InputSetFarZ(inputdata_t &inputdata)
+{
+	m_flFarZ = inputdata.value.Float();
+}
+
+void CEnvProjectedTexture::InputSetBrightnessScale(inputdata_t &inputdata)
+{
+	m_flBrightnessScale = inputdata.value.Float();
+}
+
 void CEnvProjectedTexture::Activate( void )
 {
 	m_bState = ( ( GetSpawnFlags() & ENV_PROJECTEDTEXTURE_STARTON ) != 0 );
@@ -271,7 +289,9 @@ void CC_CreateFlashlight( const CCommand &args )
 		pFlashlight->SetName( AllocPooledString( args[1] ) );
 	}
 
-	pFlashlight->Teleport( &origin, &angles, NULL );
+	pFlashlight->m_bEnableShadows = true;
+	pFlashlight->m_bAlwaysUpdate = true;
+	pFlashlight->Teleport(&origin, &angles, NULL);
 
 }
 static ConCommand create_flashlight("create_flashlight", CC_CreateFlashlight, 0, FCVAR_CHEAT);

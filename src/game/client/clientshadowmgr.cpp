@@ -1086,6 +1086,9 @@ private:
 	bool	LockShadowDepthTexture( CTextureReference *shadowDepthTexture, int nStartTexture );
 	void	UnlockAllShadowDepthTextures();
 
+	bool LockShadowDepthTextureEx(FlashlightState_t* p1, CTextureReference* p2, CTextureReference* p3) { return false; }
+	void UnlockShadowDepthTextureEx(CTextureReference* p1) {}
+
 	// Set and clear flashlight target renderable
 	void	SetFlashlightTarget( ClientShadowHandle_t shadowHandle, EHANDLE targetEntity );
 
@@ -4939,6 +4942,9 @@ void CClientShadowMgr::AddShadowToReceiver( ClientShadowHandle_t handle,
 
 	// Don't add a shadow cast by an object to itself...
 	IClientRenderable* pSourceRenderable = ClientEntityList().GetClientRenderableFromHandle( shadow.m_Entity );
+
+	if (pSourceRenderable == NULL)
+		return;
 
 	// NOTE: if pSourceRenderable == NULL, the source is probably a flashlight since there is no entity.
 	if (pSourceRenderable == pRenderable)
