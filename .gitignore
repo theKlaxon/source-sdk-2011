@@ -26,6 +26,10 @@
 *.out
 *.app
 
+# Misc
+*.log
+*.mdmp
+
 # Folders
 .vs/
 src/game/client/Debug_sdk/
