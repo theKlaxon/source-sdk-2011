@@ -23,7 +23,6 @@
 *.smod
 
 # Executables
-*.exe
 *.out
 *.app
 
