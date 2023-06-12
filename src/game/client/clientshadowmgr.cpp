@@ -6548,13 +6548,11 @@ void CClientShadowMgr::DrawDeferredShadows( const CViewSetup &view, int leafCoun
 
 void DeferredShadowToggleCallback( IConVar*, const char *, float )
 {
-#ifndef P2_DLL && DEFERRED_SHADOWS
 	if ( !IsX360() )
 	{
 		DevMsg( "Deferred shadow rendering only supported on the 360.\n" );
 		return;
 	}
-#endif
 
 	s_ClientShadowMgr.UpdateAllShadows();
 	s_ClientShadowMgr.RemoveAllShadowDecals();

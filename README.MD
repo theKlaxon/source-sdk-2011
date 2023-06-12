@@ -13,6 +13,7 @@ my top priority at the moment.
 	- the console does not work while in-game (should be fixed by fixing vgui)
 	- Release builds will crash. (build only in debug for now)
 	- env_projectedtexture does not produce shadows, even with the setting turned on in hammer.
+	- model shadow render textures appear to not be working correctly.
 	- the "disconnect" command will crash the game if used a second time.
 
 @Notice
