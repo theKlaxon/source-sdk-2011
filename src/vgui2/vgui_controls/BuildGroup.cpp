@@ -883,7 +883,7 @@ void BuildGroup::LoadControlSettings(const char *controlResourceName, const char
 		bool bSuccess = false;
 		if (!pathID)
 		{
-			bSuccess = rDat->LoadFromFile(g_pFullFileSystem, controlResourceName, "SKIN");
+			bSuccess = rDat->LoadFromFileEX(g_pFullFileSystem, controlResourceName, "SKIN");
 		}
 		if (!bSuccess)
 		{
@@ -892,6 +892,10 @@ void BuildGroup::LoadControlSettings(const char *controlResourceName, const char
 
 		if ( bSuccess )
 		{
+			//if ( IsX360() )
+			//{
+			//	rDat->ProcessResolutionKeys( surface()->GetResolutionKey() );
+			//}
 			if ( IsPC() )
 			{
 				ConVarRef cl_hud_minmode( "cl_hud_minmode", true );

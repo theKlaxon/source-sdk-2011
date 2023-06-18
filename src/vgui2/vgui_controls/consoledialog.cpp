@@ -1,4 +1,4 @@
-//===== Copyright � 1996-2005, Valve Corporation, All rights reserved. ======//
+//========= Copyright Valve Corporation, All rights reserved. ============//
 //
 // Purpose: 
 //
@@ -12,7 +12,7 @@
 #include "vgui/IVGui.h"
 #include "vgui/ISurface.h"
 #include "vgui/ILocalize.h"
-#include "keyvalues.h"
+#include "KeyValues.h"
 
 #include "vgui_controls/Button.h"
 #include "vgui/KeyCode.h"
@@ -24,7 +24,6 @@
 #include "icvar.h"
 #include "filesystem.h"
 
-#include <ctype.h>
 #include <stdlib.h>
 
 #if defined( _X360 )
@@ -35,6 +34,7 @@
 #include "tier0/memdbgon.h"
 
 using namespace vgui;
+
 
 //-----------------------------------------------------------------------------
 // Used by the autocompletion system
@@ -88,7 +88,7 @@ public:
 		}
 		else if ( code == KEY_ENTER )
 		{
-			PostMessage( GetParent()->GetVPanel(), new KeyValues( "Command", "command", "submit" ) );
+			// submit is the default button whose click event will have been called already
 		}
 		else
 		{
@@ -445,64 +445,6 @@ static ConCommand *FindAutoCompleteCommmandFromPartial( const char *partial )
 	return cmd;
 }
 
-//-----------------------------------------------------------------------------
-// Purpose: depending on our input mode will match the command or substrings in the command.
-//-----------------------------------------------------------------------------
-bool CConsolePanel::CommandMatchesText(const char *command, const char *text, bool bCheckSubstrings)
-{
-	if (bCheckSubstrings)
-	{
-		int textLeft = Q_strlen( text );
-		int length = 0;
-		char uprCommand[ 256 ];
-		char substring[ 256 ];
-		Q_strncpy( substring, text, sizeof( substring ) );
-		Q_strncpy( uprCommand, command, sizeof( uprCommand ) );
-
-		Q_strupr( uprCommand );
-		Q_strupr( substring );
-
-		char *strStart = substring;
-		char *space;
-		
-		// split the search string based on spaces, keep searching for the substrings until we are out of text
-		do
-		{
-			space = Q_strstr( strStart, " " );
-			if ( space )
-			{
-				*space = 0; // replace the space with an end of string char
-			}
-
-			if( !Q_strstr(uprCommand, strStart) )
-			{
-				return false;
-			}
-			
-			length = Q_strlen(strStart) + 1; // need to do an extra to account for the space
-
-			if( textLeft > length )
-			{
-				textLeft -= length;
-				strStart += length;
-			}
-			else // we hit the end of our substrings - abort
-			{
-				space = NULL;
-			}
-
-		} while (space);
-
-		
-		
-		return true;
-	}
-	else if ( !strnicmp(text, command, Q_strlen(text))) // just try to match the whole string.
-	{
-		return true;
-	}
-	return false;
-}
 
 //-----------------------------------------------------------------------------
 // Purpose: rebuilds the list of possible completions from the current entered text
@@ -529,50 +471,48 @@ void CConsolePanel::RebuildCompletionList(const char *text)
 	}
 
 	bool bNormalBuild = true;
-	bool bCheckSubstrings = false;
 
+	// if there is a space in the text, and the command isn't of the type to know how to autocomplet, then command completion is over
 	const char *space = strstr( text, " " );
 	if ( space )
 	{
 		ConCommand *pCommand = FindAutoCompleteCommmandFromPartial( text );
-		if ( pCommand )
-		{
-			bNormalBuild = false;
+		if ( !pCommand )
+			return;
 
-			CUtlVector< CUtlString > commands;
-			int count = pCommand->AutoCompleteSuggest( text, commands );
-			Assert( count <= COMMAND_COMPLETION_MAXITEMS );
-			int i;
+		bNormalBuild = false;
 
-			for ( i = 0; i < count; i++ )
-			{
-				// match found, add to list
-				CompletionItem *item = new CompletionItem();
-				m_CompletionList.AddToTail( item );
-				item->m_bIsCommand = false;
-				item->m_pCommand = NULL;
-				item->m_pText = new CHistoryItem( commands[ i ].String() );
-			}
-		}
-		else
+		CUtlVector< CUtlString > commands;
+		int count = pCommand->AutoCompleteSuggest( text, commands );
+		Assert( count <= COMMAND_COMPLETION_MAXITEMS );
+		int i;
+
+		for ( i = 0; i < count; i++ )
 		{
-			bCheckSubstrings = true;
+			// match found, add to list
+			CompletionItem *item = new CompletionItem();
+			m_CompletionList.AddToTail( item );
+			item->m_bIsCommand = false;
+			item->m_pCommand = NULL;
+			item->m_pText = new CHistoryItem( commands[ i ].String() );
 		}
 	}
 				 
 	if ( bNormalBuild )
 	{
 		// look through the command list for all matches
-		ICvar::Iterator iter( g_pCVar );
-		for ( iter.SetFirst() ; iter.IsValid() ; iter.Next() )
+		ICvar::Iterator i(g_pCVar);
+		ConCommandBase const* cmd = i.Get();
+
+		while (cmd)
 		{
-			ConCommandBase *cmd = iter.Get();
 			if ( cmd->IsFlagSet( FCVAR_DEVELOPMENTONLY ) || cmd->IsFlagSet( FCVAR_HIDDEN ) )
 			{
+				cmd = cmd->GetNext();
 				continue;
 			}
-			
-			if (CommandMatchesText(cmd->GetName(), text, bCheckSubstrings ))
+
+			if ( !strnicmp(text, cmd->GetName(), len))
 			{
 				// match found, add to list
 				CompletionItem *item = new CompletionItem();
@@ -609,29 +549,32 @@ void CConsolePanel::RebuildCompletionList(const char *text)
 					item->m_pText = new CHistoryItem( tst );
 				}
 			}
+
+			cmd = cmd->GetNext();
 		}
 
 		// Now sort the list by command name
-		if (m_CompletionList.Count() >= 2)
+		if ( m_CompletionList.Count() >= 2 )
 		{
-			for (int i = 0; i < m_CompletionList.Count(); i++)
+			for ( int i = 0 ; i < m_CompletionList.Count(); i++ )
 			{
-				for (int j = i + 1; j < m_CompletionList.Count(); j++)
+				for ( int j = i + 1; j < m_CompletionList.Count(); j++ )
 				{
-					const CompletionItem* i1, * i2;
-					i1 = m_CompletionList[i];
-					i2 = m_CompletionList[j];
+					const CompletionItem *i1, *i2;
+					i1 = m_CompletionList[ i ];
+					i2 = m_CompletionList[ j ];
 
-					if (Q_stricmp(i1->GetName(), i2->GetName()) > 0)
+					if ( Q_stricmp( i1->GetName(), i2->GetName() ) > 0 )
 					{
-						CompletionItem* temp = m_CompletionList[i];
-						m_CompletionList[i] = m_CompletionList[j];
-						m_CompletionList[j] = temp;
+						CompletionItem *temp = m_CompletionList[ i ];
+						m_CompletionList[ i ] = m_CompletionList[ j ];
+						m_CompletionList[ j ] = temp;
 					}
 				}
 			}
 		}
 	}
+
 }
 
 //-----------------------------------------------------------------------------
@@ -670,21 +613,21 @@ void CConsolePanel::OnAutoComplete(bool reverse)
 
 	// match found, set text
 	char completedText[256];
-	CompletionItem* item = m_CompletionList[m_iNextCompletion];
-	Assert(item);
+	CompletionItem *item = m_CompletionList[m_iNextCompletion];
+	Assert( item );
 
-	if (!item->m_bIsCommand && item->m_pCommand)
+	if ( !item->m_bIsCommand && item->m_pCommand )
 	{
-		Q_strncpy(completedText, item->GetCommand(), sizeof(completedText) - 2);
+		Q_strncpy(completedText, item->GetCommand(), sizeof(completedText) - 2 );
 	}
 	else
 	{
-		Q_strncpy(completedText, item->GetItemText(), sizeof(completedText) - 2);
+		Q_strncpy(completedText, item->GetItemText(), sizeof(completedText) - 2 );
 	}
 
-	if (!Q_strstr(completedText, " "))
+	if ( !Q_strstr( completedText, " " ) )
 	{
-		Q_strncat(completedText, " ", sizeof(completedText), COPY_ALL_CHARACTERS);
+		Q_strncat(completedText, " ", sizeof(completedText), COPY_ALL_CHARACTERS );
 	}
 
 	m_pEntry->SetText(completedText);
@@ -866,8 +809,8 @@ void CConsolePanel::OnKeyCodeTyped(KeyCode code)
 		else if (code == KEY_DOWN)
 		{
 			OnAutoComplete(false);
-			//	UpdateCompletionListPosition();
-			//	m_pCompletionList->SetVisible(true);
+		//	UpdateCompletionListPosition();
+		//	m_pCompletionList->SetVisible(true);
 
 			m_pEntry->RequestFocus();
 		}
@@ -878,6 +821,7 @@ void CConsolePanel::OnKeyCodeTyped(KeyCode code)
 		}
 	}
 }
+
 
 //-----------------------------------------------------------------------------
 // Purpose: lays out controls
@@ -985,18 +929,7 @@ void CConsolePanel::ApplySchemeSettings(IScheme *pScheme)
 	m_PrintColor = GetSchemeColor("Console.TextColor", pScheme);
 	m_DPrintColor = GetSchemeColor("Console.DevTextColor", pScheme);
 	m_pHistory->SetFont( pScheme->GetFont( "ConsoleText", IsProportional() ) );
-	m_pEntry->SetFont( pScheme->GetFont( "DefaultSmall", IsProportional() ) );
 	m_pCompletionList->SetFont( pScheme->GetFont( "DefaultSmall", IsProportional() ) );
-	m_pSubmit->SetFont( pScheme->GetFont( "DefaultSmall", IsProportional() ) );
-
-	if ( true ) // make the console opaque
-	{
-		Color bgColor( 64,64,64, 255 );
-		SetBgColor( bgColor );
-		m_pHistory->SetBgColor( bgColor );
-		m_pEntry->SetBgColor( bgColor );
-		m_pCompletionList->SetBgColor( bgColor );
-	}
 
 	InvalidateLayout();
 }
@@ -1036,14 +969,20 @@ void CConsolePanel::AddToHistory( const char *commandText, const char *extraText
 	}
 
 	// strip the space off the end of the command before adding it to the history
-	char *command = static_cast<char *>( stackalloc( (strlen( commandText ) + 1 ) * sizeof( char ) ));
+	// If this code gets cleaned up then we should remove the redundant calls to strlen,
+	// the check for whether _alloca succeeded, and should use V_strncpy instead of the
+	// error prone memset/strncpy sequence.
+	char *command = static_cast<char *>( _alloca( (strlen( commandText ) + 1 ) * sizeof( char ) ));
 	if ( command )
 	{
 		memset( command, 0x0, strlen( commandText ) + 1 );
 		strncpy( command, commandText, strlen( commandText ));
-		if ( command[ strlen( commandText ) -1 ] == ' ' )
+		// There is no actual bug here, just some sloppy/odd code.
+		// src\vgui2\vgui_controls\consoledialog.cpp(974): warning C6053: The prior call to 'strncpy' might not zero-terminate string 'command'
+		ANALYZE_SUPPRESS( 6053 )
+		if ( command[ strlen( command ) -1 ] == ' ' )
 		{
-			 command[ strlen( commandText ) -1 ] = '\0';
+			 command[ strlen( command ) -1 ] = '\0';
 		}
 	}
 
@@ -1146,7 +1085,7 @@ void CConsolePanel::DumpConsoleTextToFile()
 		{
 			wchar_t buf[512];
 			m_pHistory->GetText(pos, buf, sizeof(buf));
-			pos += (sizeof(buf) / sizeof(wchar_t)) - 1; //-1 to compensate for null terminator 
+			pos += sizeof(buf) / sizeof(wchar_t);
 
 			// don't continue if none left
 			if (buf[0] == 0)
@@ -1247,14 +1186,6 @@ void CConsoleDialog::Activate()
 {
 	BaseClass::Activate();
 	m_pConsolePanel->m_pEntry->RequestFocus();
-
-	static ConVarRef cv_vguipanel_active( "vgui_panel_active" );
-	static ConVarRef cv_console_window_open( "console_window_open" );
-
-	if ( !cv_console_window_open.GetBool() )
-		cv_vguipanel_active.SetValue( cv_vguipanel_active.GetInt() + 1 );
-
-	cv_console_window_open.SetValue( true );
 }
 
 
@@ -1263,14 +1194,6 @@ void CConsoleDialog::Activate()
 //-----------------------------------------------------------------------------
 void CConsoleDialog::Hide()
 {
-	static ConVarRef cv_vguipanel_active( "vgui_panel_active" );
-	static ConVarRef cv_console_window_open( "console_window_open" );
-
-	if ( cv_console_window_open.GetBool() )
-		cv_vguipanel_active.SetValue( cv_vguipanel_active.GetInt() - 1 );
-
-	cv_console_window_open.SetValue( false );
-
 	OnClose();
 	m_pConsolePanel->Hide();
 }
@@ -1322,9 +1245,10 @@ void CConsoleDialog::DumpConsoleTextToFile()
 	m_pConsolePanel->DumpConsoleTextToFile( );
 }
 
-void CConsoleDialog::OnKeyCodePressed(vgui::KeyCode code)
+
+void CConsoleDialog::OnKeyCodePressed( vgui::KeyCode code )
 {
-	if (code == KEY_XBUTTON_B)
+	if ( code == KEY_XBUTTON_B )
 	{
 		Hide();
 	}
@@ -1333,4 +1257,3 @@ void CConsoleDialog::OnKeyCodePressed(vgui::KeyCode code)
 		BaseClass::OnKeyCodePressed(code);
 	}
 }
-

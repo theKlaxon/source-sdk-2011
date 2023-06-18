@@ -792,7 +792,7 @@ Panel::~Panel()
 //-----------------------------------------------------------------------------
 void Panel::MakeReadyForUse()
 {
-	PerformApplySchemeSettings();
+//	PerformApplySchemeSettings();
 	UpdateSiblingPin();
 	surface()->SolveTraverse( GetVPanel(), true );
 }
@@ -3296,6 +3296,7 @@ HCursor Panel::GetCursor()
 	return _cursor;
 }
 
+//
 //void Panel::SetCursorAlwaysVisible( bool visible )
 //{
 //	surface()->SetCursorAlwaysVisible( visible );
@@ -3569,6 +3570,8 @@ void Panel::PostActionSignal( KeyValues *message )
 
 void Panel::SetBorder(IBorder *border)
 {
+	return; // TODO FIX
+
 	_border = border;
 
 	if (border)

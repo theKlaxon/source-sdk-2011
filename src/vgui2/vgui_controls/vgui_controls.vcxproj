@@ -332,6 +332,7 @@ if ERRORLEVEL 1 exit /b 1
     <ClCompile Include="MessageDialog.cpp" />
     <ClCompile Include="Panel.cpp" />
     <ClCompile Include="PanelListPanel.cpp" />
+    <ClCompile Include="patch.cpp" />
     <ClCompile Include="PerforceFileExplorer.cpp" />
     <ClCompile Include="PerforceFileList.cpp" />
     <ClCompile Include="perforcefilelistframe.cpp" />
