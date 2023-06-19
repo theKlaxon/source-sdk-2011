@@ -671,6 +671,15 @@ public:
 
 	virtual float			GetDeltaFrameTime( int maxTicks ) const = 0;
 	virtual void			ForceObjectsToSleep( IPhysicsObject **pList, int listCount ) = 0;
+
+	virtual void SetPredicted(bool bPredicted) = 0;
+	virtual bool IsPredicted() = 0;
+	virtual void SetPredictionCommandNum(int iCommandNum) = 0;
+	virtual int GetPredictionCommandNum() = 0;
+	virtual void DoneReferencingPreviousCommands(int iCommandNum) = 0;
+	virtual void RestorePredictedSimulation() = 0;
+
+	virtual void DestroyCollideOnDeadObjectFlush(CPhysCollide*) = 0;
 };
 
 enum callbackflags
@@ -752,7 +761,11 @@ public:
 	virtual void			RecheckCollisionFilter() = 0;
 	// NOTE: Contact points aren't updated when collision rules change, call this to force an update
 	// UNDONE: Force this in RecheckCollisionFilter() ?
+#if defined(P2_DLL) || defined(GAME_PORTAL2)
+	virtual void			RecheckContactPoints(bool bSearchForNewContacts) = 0;
+#else
 	virtual void			RecheckContactPoints() = 0;
+#endif
 
 	// mass accessors
 	virtual void			SetMass( float mass ) = 0;
