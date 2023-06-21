@@ -8,7 +8,7 @@ my top priority at the moment.
 @TODO<br>
 	- The particles library does not function properly, particles do not show in game.<br>
 	- ~vgui_controls is curreently broken. Theres is an older (working) version included in lib/public for<br>
-	  use while other issues are being fixed. (since the issue with vgui breaks all menus + the console)~<br>
+	  	use while other issues are being fixed. (since the issue with vgui breaks all menus + the console)~<br>
 	- the console does not work while in-game (should be fixed by fixing vgui)<br>
 	- ~Release builds will crash. (build only in debug for now)~<br>
 	- env_projectedtexture does not produce shadows, even with the setting turned on in hammer.<br>
