@@ -19,6 +19,6 @@ my top priority at the moment.
 	- This SDK is not a portal 2 leak. I simply adapted Alien Swarm's SDK to work with the portal 2 engine.
 	  Most of Alien Swarm's original game code has been removed from this SDK in order to create a suitable
 	  template for modders. VPC will be updated soon, as the one included in this version is out of date 
-	  for the project files i have now.\n
+	  for the project files i have now.
 	- This SDK is still in early development, and I will be working as fast as i can to fix these issues. 
 	  If there are any more bugs discovered, please create an issue post and i will add it to my TODO list.
