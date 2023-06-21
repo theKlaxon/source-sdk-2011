@@ -6,6 +6,7 @@ Any contributions to this SDK are welcome, and encouraged. The issues in the TOD
 my top priority at the moment.
 
 @TODO<br>
+<p>
 	- The particles library does not function properly, particles do not show in game.<br>
 	- ~vgui_controls is curreently broken. Theres is an older (working) version included in lib/public for<br>
 	  	use while other issues are being fixed. (since the issue with vgui breaks all menus + the console)~<br>
@@ -14,6 +15,7 @@ my top priority at the moment.
 	- env_projectedtexture does not produce shadows, even with the setting turned on in hammer.<br>
 	- model shadow render textures appear to not be working correctly.<br>
 	- the "disconnect" command will crash the game if used a second time.<br>
+</p>
 
 @Notice
 
