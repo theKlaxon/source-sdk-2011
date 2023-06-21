@@ -3,13 +3,13 @@ A version of Source SDK built for the Portal 2 engine.
 
 This SDK is, at the moment, very unstable. I am still working to correct some of the major issues.
 Any contributions to this SDK are welcome, and encouraged. The issues in the TODO list below are 
-my top priority at the moment. 
+my top priority at the moment.
 
 @TODO
 
 	- The particles library does not function properly, particles do not show in game. 
-	- vgui_controls is curreently broken. Theres is an older (working) version included in lib/public for
-	  use while other issues are being fixed. (since the issue with vgui breaks all menus + the console)
+	- ~~vgui_controls is curreently broken. Theres is an older (working) version included in lib/public for
+	  use while other issues are being fixed. (since the issue with vgui breaks all menus + the console)~~
 	- the console does not work while in-game (should be fixed by fixing vgui)
 	- Release builds will crash. (build only in debug for now)
 	- env_projectedtexture does not produce shadows, even with the setting turned on in hammer.
