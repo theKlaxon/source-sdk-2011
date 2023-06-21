@@ -3,7 +3,7 @@ A version of Source SDK built for the Portal 2 engine.
 
 This SDK is, at the moment, very unstable. I am still working to correct some of the major issues.
 Any contributions to this SDK are welcome, and encouraged. The issues in the TODO list below are 
-my top priority at the moment. ~test~
+my top priority at the moment.
 
 @TODO
 
