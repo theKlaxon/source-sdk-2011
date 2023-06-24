@@ -399,7 +399,7 @@ struct FlashlightState_t
 
 		m_bUberlight = false;
 
-		m_bVolumetric = false;
+		m_bVolumetric = false; // true is still experimental -Klax
 		m_flNoiseStrength = 0.8f;
 		m_flFlashlightTime = 0.0f;
 		m_nNumPlanes = 64;
@@ -417,9 +417,9 @@ struct FlashlightState_t
 		m_pProjectedMaterial = NULL;
 		m_bGlobalLight = false;
 
-		m_bSimpleProjection = false;
-		m_flProjectionSize = 500.0f;
-		m_flProjectionRotation = 0.0f;
+		//m_bSimpleProjection = false;
+		//m_flProjectionSize = 500.0f;
+		//m_flProjectionRotation = 0.0f;
 	}
 
 	Vector m_vecLightOrigin;
@@ -444,8 +444,7 @@ struct FlashlightState_t
 	ITexture *m_pSpotlightTexture;
 	IMaterial *m_pProjectedMaterial;
 	int m_nSpotlightTextureFrame;
-	bool m_bGlobalLight;
-
+	
 	// Shadow depth mapping parameters
 	bool  m_bEnableShadows;
 	bool  m_bDrawShadowFrustum;
@@ -460,7 +459,6 @@ struct FlashlightState_t
 	bool  m_bShadowHighRes;
 
 	// simple projection
-	bool	m_bSimpleProjection;
 	float	m_flProjectionSize;
 	float	m_flProjectionRotation;
 
@@ -474,6 +472,7 @@ struct FlashlightState_t
 	int m_nNumPlanes;
 	float m_flPlaneOffset;
 	float m_flVolumetricIntensity;
+	bool m_bGlobalLight;
 
 	// Getters for scissor members
 	bool DoScissor() const { return m_bScissor; }
