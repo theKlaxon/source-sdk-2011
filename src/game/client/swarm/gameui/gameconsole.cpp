@@ -18,6 +18,8 @@
 #include "vgui/IVGUI.h"
 #include "vgui_controls/Panel.h"
 #include "convar.h"
+#include "GameUI/swarm/basemodui.h"
+#include "GameUI/swarm/basemodpanel.h"
 
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
@@ -71,6 +73,10 @@ void CGameConsole::Initialize()
 #endif
 }
 
+#include "..\public\vgui_controls\Controls.h"
+extern BaseModUI::CBaseModPanel& GetUiBaseModPanelClass();
+vgui::VPANEL pauseFrameParent;
+
 //-----------------------------------------------------------------------------
 // Purpose: activates the console, makes it visible and brings it to the foreground
 //-----------------------------------------------------------------------------
@@ -83,6 +89,14 @@ void CGameConsole::Activate()
 	vgui::surface()->RestrictPaintToSinglePanel(NULL);
 	m_pConsole->SetEnabled(true);
 	m_pConsole->Activate();
+	m_pConsole->RequestFocus();
+
+	//callback to te ingamemainmenu if there is one, and fuck it up real good
+	BaseModUI::CBaseModFrame* pauseFrame = GetUiBaseModPanelClass().m_Frames[BaseModUI::WT_INGAMEMAINMENU].Get();
+	if (pauseFrame) {
+		pauseFrame->Close();
+	}
+		
 #endif
 }
 
