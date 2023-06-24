@@ -379,7 +379,7 @@ void C_EnvProjectedTexture::UpdateLight( void )
 
 		if ( 0/*m_bSimpleProjection == true*/ )
 		{
-			state.m_bSimpleProjection = true;
+			//state.m_bSimpleProjection = true;
 			state.m_bOrtho = true;
 			state.m_fOrthoLeft = -m_flProjectionSize;
 			state.m_fOrthoTop = -m_flProjectionSize;

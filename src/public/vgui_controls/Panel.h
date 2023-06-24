@@ -142,7 +142,7 @@ class IForceVirtualInheritancePanel
 //-----------------------------------------------------------------------------
 class Panel : public IClientPanel, virtual IForceVirtualInheritancePanel
 {
-	DECLARE_CLASS_SIMPLE_NOBASE( Panel );
+	DECLARE_CLASS_SIMPLE_NOBASE( Panel ); //
 
 public:
 	// For property mapping
@@ -165,8 +165,8 @@ public:
 	virtual VPANEL GetVPanel() { return _vpanel; }
 	HPanel ToHandle() const;
 
-	//virtual void Init( int x, int y, int wide, int tall );
-	void Init( int x, int y, int wide, int tall );
+	virtual void Init( int x, int y, int wide, int tall );
+	//void Init( int x, int y, int wide, int tall );
 
 	//-----------------------------------------------------------------------------
 	// PANEL METHODS

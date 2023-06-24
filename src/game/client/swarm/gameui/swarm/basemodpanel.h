@@ -202,7 +202,9 @@ namespace BaseModUI
 
 		static CBaseModPanel* m_CFactoryBasePanel;
 
+	public:
 		vgui::DHANDLE< CBaseModFrame > m_Frames[WT_WINDOW_COUNT];
+	private:
 		vgui::DHANDLE< CBaseModFooterPanel > m_FooterPanel;
 		WINDOW_TYPE m_ActiveWindow[WPRI_COUNT];
 		bool m_LevelLoading;
