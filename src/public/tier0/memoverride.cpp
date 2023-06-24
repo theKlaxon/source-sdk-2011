@@ -67,7 +67,6 @@ inline void *ReallocUnattributed( void *pMem, size_t nSize )
 
 #undef inline
 
-
 //-----------------------------------------------------------------------------
 // Standard functions in the CRT that we're going to override to call our allocator
 //-----------------------------------------------------------------------------
@@ -75,12 +74,32 @@ inline void *ReallocUnattributed( void *pMem, size_t nSize )
 // this magic only works under win32
 // under linux this malloc() overrides the libc malloc() and so we
 // end up in a recursion (as MemAlloc_Alloc() calls malloc)
+
+#ifdef GAME_2011 // ik this is most likely overly cautious, but i dont want to mess up any thing else in the p2 sdk
+
 #if _MSC_VER >= 1400
+
+#if _MSC_VER >= 1900
+#define _CRTNOALIAS
+#endif
+
 #define ALLOC_CALL _CRTNOALIAS _CRTRESTRICT 
 #define FREE_CALL _CRTNOALIAS 
 #else
 #define ALLOC_CALL
 #define FREE_CALL
+#endif
+
+#else
+
+#if (_MSC_VER >= 1400)
+#define ALLOC_CALL _CRTNOALIAS _CRTRESTRICT 
+#define FREE_CALL _CRTNOALIAS 
+#else
+#define ALLOC_CALL
+#define FREE_CALL
+#endif
+
 #endif
 
 extern "C"
@@ -127,30 +146,63 @@ void* __cdecl _malloc_base( size_t nSize )
 	return AllocUnattributed( nSize );
 }
 #else
-void *_malloc_base( size_t nSize )
-{
-	return AllocUnattributed( nSize );
-}
+
+// brought from volt asw memoverride
+#if ( defined ( _MSC_VER ) && _MSC_VER >= 1900 )
+	_CRTRESTRICT
+#endif
+		void* _malloc_base(size_t nSize)
+	{
+		return AllocUnattributed(nSize);
+	}
+
 #endif
 
-void *_calloc_base( size_t nSize )
+#if ( defined ( _MSC_VER ) && _MSC_VER >= 1900 )
+	_CRTRESTRICT void* _calloc_base(size_t nCount, size_t nSize)
+	{
+		void* pMem = AllocUnattributed(nCount * nSize);
+		memset(pMem, 0, nCount * nSize);
+		return pMem;
+	}
+#else
+	void* _calloc_base(size_t nSize)
+	{
+		void* pMem = AllocUnattributed(nSize);
+		memset(pMem, 0, nSize);
+		return pMem;
+	}
+#endif
+
+#if ( defined ( _MSC_VER ) && _MSC_VER >= 1900 )
+	_CRTRESTRICT
+#endif
+void* _realloc_base(void* pMem, size_t nSize)
 {
-	void *pMem = AllocUnattributed( nSize );
-	memset(pMem, 0, nSize);
-	return pMem;
+	return ReallocUnattributed(pMem, nSize);
 }
 
-void *_realloc_base( void *pMem, size_t nSize )
+#if ( defined ( _MSC_VER ) && _MSC_VER >= 1900 )
+	_CRTRESTRICT
+#endif
+#ifdef GAME_2011
+void* _recalloc_base(void* pMem, size_t nCount, size_t nSize)
 {
-	return ReallocUnattributed( pMem, nSize );
+	void* pMemOut = ReallocUnattributed(pMem, nSize * nCount);
+	if (!pMem)
+	{
+		memset(pMemOut, 0, nSize * nCount);
+	}
+	return pMemOut;
 }
-
+#else
 void *_recalloc_base( void *pMem, size_t nSize )
 {
 	void *pMemOut = ReallocUnattributed( pMem, nSize );
 	memset(pMemOut, 0, nSize);
 	return pMemOut;
 }
+#endif
 
 void _free_base( void *pMem )
 {
@@ -175,7 +227,11 @@ void * __cdecl _malloc_crt(size_t size)
 
 void * __cdecl _calloc_crt(size_t count, size_t size)
 {
-	return _calloc_base( count * size );
+#if (defined( _MSC_VER ) && _MSC_VER >= 1900) // brought from volt asw memoverride
+	return _calloc_base(count, size);
+#else
+	return _calloc_base(count * size);
+#endif
 }
 
 void * __cdecl _realloc_crt(void *ptr, size_t size)
@@ -183,10 +239,17 @@ void * __cdecl _realloc_crt(void *ptr, size_t size)
 	return _realloc_base( ptr, size );
 }
 
-void * __cdecl _recalloc_crt(void *ptr, size_t count, size_t size)
+#ifdef GAME_2011
+void* __cdecl _recalloc_crt(void* ptr, size_t count, size_t size)
 {
-	return _recalloc_base( ptr, size * count );
+	return _recalloc_base(ptr, count, size);
 }
+#else
+void* __cdecl _recalloc_crt(void* ptr, size_t count, size_t size)
+{
+	return _recalloc_base(ptr, size * count);
+}
+#endif
 
 ALLOC_CALL void * __cdecl _recalloc ( void * memblock, size_t count, size_t size )
 {
@@ -195,10 +258,17 @@ ALLOC_CALL void * __cdecl _recalloc ( void * memblock, size_t count, size_t size
 	return pMem;
 }
 
-size_t _msize_base( void *pMem )
+#ifdef GAME_2011
+size_t _msize_base(void* pMem) noexcept
 {
 	return g_pMemAlloc->GetSize(pMem);
 }
+#else
+size_t _msize_base(void* pMem)
+{
+	return g_pMemAlloc->GetSize(pMem);
+}
+#endif
 
 size_t _msize( void *pMem )
 {
@@ -601,6 +671,7 @@ int _CrtSetDbgFlag( int nNewFlag )
 #define AFNAME(var) __p_ ## var
 #define AFRET(var)  &var
 
+#ifndef GAME_2011
 int _crtDbgFlag = _CRTDBG_ALLOC_MEM_DF;
 int* AFNAME(_crtDbgFlag)(void)
 {
@@ -612,6 +683,7 @@ long* AFNAME(_crtBreakAlloc) (void)
 {
 	return AFRET(_crtBreakAlloc);
 }
+#endif
 
 void __cdecl _CrtSetDbgBlockType( void *pMem, int nBlockUse )
 {
@@ -714,7 +786,7 @@ int __cdecl _CrtDbgReport( int nRptType, const char * szFile,
 
 #if _MSC_VER >= 1400
 
-#if defined( _DEBUG ) && !defined(P2_DLL)
+#if defined( _DEBUG ) && !defined(P2_DLL) && !defined(GAME_2011) // TODO: GAME_2011 is only to be used in volt implementation
  
 // wrapper which passes no debug info; not available in debug
 void __cdecl _invalid_parameter_noinfo(void)
@@ -747,12 +819,21 @@ int __cdecl _CrtDbgReportW( int nRptType, const wchar_t *szFile, int nLine,
 	return 0;
 }
 
-int __cdecl _VCrtDbgReportA( int nRptType, const wchar_t * szFile, int nLine, 
-							 const wchar_t * szModule, const wchar_t * szFormat, va_list arglist )
+#if ( defined(_MSC_VER) && _MSC_VER >= 1900)
+int __cdecl _VCrtDbgReportA(int nRptType, void* pReturnAddr, const char* szFile, int nLine,
+	const char* szModule, const char* szFormat, va_list arglist)
 {
 	Assert(0);
 	return 0;
 }
+#else
+int __cdecl _VCrtDbgReportA(int nRptType, const wchar_t* szFile, int nLine,
+	const wchar_t* szModule, const wchar_t* szFormat, va_list arglist)
+{
+	Assert(0);
+	return 0;
+}
+#endif
 
 int __cdecl _CrtSetReportHook2( int mode, _CRT_REPORT_HOOK pfnNewHook )
 {
@@ -924,11 +1005,13 @@ void __cdecl _aligned_free_dbg( void * memblock)
     _aligned_free(memblock);
 }
 
-size_t __cdecl _CrtSetDebugFillThreshold( size_t _NewDebugFillThreshold)
+#if (_MSC_VER < 1900) && !defined(GAME_2011)
+size_t __cdecl _CrtSetDebugFillThreshold(size_t _NewDebugFillThreshold)
 {
 	Assert(0);
-    return 0;
+	return 0;
 }
+#endif
 
 //===========================================
 // NEW!!! 64-bit
@@ -1228,12 +1311,19 @@ struct _tiddata {
     void *      _tpxcptinfoptrs; /* ptr to exception info pointers */
     int         _tfpecode;      /* float point exception code */
 
-    /* pointer to the copy of the multibyte character information used by
-     * the thread */
-    pthreadmbcinfo  ptmbcinfo;
+	// brought over from volt asw memoverride
+#if ( defined( _MSC_VER ) && _MSC_VER >= 1900)
+	void* ptmbcinfo_dummy;
+	void* ptlocinfo_dummy;
+#else
+	/* pointer to the copy of the multibyte character information used by
+	 * the thread */
+	pthreadmbcinfo  ptmbcinfo;
 
-    /* pointer to the copy of the locale informaton used by the thead */
-    pthreadlocinfo  ptlocinfo;
+	/* pointer to the copy of the locale informaton used by the thead */
+	pthreadlocinfo  ptlocinfo;
+#endif
+
     int         _ownlocale;     /* if 1, this thread owns its own locale */
 
     /* following field is needed by NLG routines */
@@ -1279,6 +1369,7 @@ struct _tiddata {
 
 typedef struct _tiddata * _ptiddata;
 
+#ifndef GAME_2011
 class _LocaleUpdate
 {
     _locale_tstruct localeinfo;
@@ -1319,7 +1410,7 @@ class _LocaleUpdate
         return &localeinfo;
     }
 };
-
+#endif
 
 #pragma warning(push)
 #pragma warning(disable: 4483)

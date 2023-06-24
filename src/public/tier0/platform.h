@@ -282,7 +282,7 @@ typedef unsigned int		uint;
 
 
 // Maximum and minimum representable values
-#ifndef PLATFORM_OSX
+#if !defined(PLATFORM_OSX) && !defined(GAME_2011) 
 
 #define  INT8_MAX			SCHAR_MAX
 #define  INT16_MAX			SHRT_MAX

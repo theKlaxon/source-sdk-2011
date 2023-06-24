@@ -1716,7 +1716,7 @@ void CBasePlayer::Event_Killed( const CTakeDamageInfo &info )
 	IPhysicsObject *pObject = VPhysicsGetObject();
 	if ( pObject )
 	{
-		pObject->RecheckContactPoints();
+		pObject->RecheckContactPoints(true);
 	}
 
 	SetMoveType( MOVETYPE_FLYGRAVITY );

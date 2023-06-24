@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32104.313
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "joltphysics_avx2", "vphysics_jolt\joltphysics\joltphysics_avx2.vcxproj", "{AB9E6705-7E46-8924-E05D-3D37070F0B2C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "joltphysics_sse42", "vphysics_jolt\joltphysics\joltphysics_sse42.vcxproj", "{E89614B1-B14E-0BE0-D4FF-9BEDA6961756}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "joltphysics_sse2", "vphysics_jolt\joltphysics\joltphysics_sse2.vcxproj", "{CCD2C5B0-2E1F-CA94-B994-0CBFBFF94D1D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vphysics_jolt_avx2", "vphysics_jolt\vphysics_jolt\vphysics_jolt_avx2.vcxproj", "{3930BA98-5A7D-D298-226D-D01F0C775B59}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AB9E6705-7E46-8924-E05D-3D37070F0B2C} = {AB9E6705-7E46-8924-E05D-3D37070F0B2C}
+		{E89614B1-B14E-0BE0-D4FF-9BEDA6961756} = {E89614B1-B14E-0BE0-D4FF-9BEDA6961756}
+		{CCD2C5B0-2E1F-CA94-B994-0CBFBFF94D1D} = {CCD2C5B0-2E1F-CA94-B994-0CBFBFF94D1D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vphysics_jolt_sse42", "vphysics_jolt\vphysics_jolt\vphysics_jolt_sse42.vcxproj", "{2947E04B-6183-C5BE-DB6D-EA66697CCD49}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AB9E6705-7E46-8924-E05D-3D37070F0B2C} = {AB9E6705-7E46-8924-E05D-3D37070F0B2C}
+		{E89614B1-B14E-0BE0-D4FF-9BEDA6961756} = {E89614B1-B14E-0BE0-D4FF-9BEDA6961756}
+		{CCD2C5B0-2E1F-CA94-B994-0CBFBFF94D1D} = {CCD2C5B0-2E1F-CA94-B994-0CBFBFF94D1D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vphysics_jolt_sse2", "vphysics_jolt\vphysics_jolt\vphysics_jolt_sse2.vcxproj", "{F5389EC1-5EE4-1001-1465-26EA1DDF5875}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AB9E6705-7E46-8924-E05D-3D37070F0B2C} = {AB9E6705-7E46-8924-E05D-3D37070F0B2C}
+		{E89614B1-B14E-0BE0-D4FF-9BEDA6961756} = {E89614B1-B14E-0BE0-D4FF-9BEDA6961756}
+		{CCD2C5B0-2E1F-CA94-B994-0CBFBFF94D1D} = {CCD2C5B0-2E1F-CA94-B994-0CBFBFF94D1D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vphysics_wrapper", "vphysics_jolt\vphysics_wrapper\vphysics_wrapper_external.vcxproj", "{AB27FC44-A47D-E5D5-616A-770934637114}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB9E6705-7E46-8924-E05D-3D37070F0B2C}.Debug|x86.ActiveCfg = Debug|Win32
+		{AB9E6705-7E46-8924-E05D-3D37070F0B2C}.Debug|x86.Build.0 = Debug|Win32
+		{AB9E6705-7E46-8924-E05D-3D37070F0B2C}.Release|x86.ActiveCfg = Release|Win32
+		{AB9E6705-7E46-8924-E05D-3D37070F0B2C}.Release|x86.Build.0 = Release|Win32
+		{E89614B1-B14E-0BE0-D4FF-9BEDA6961756}.Debug|x86.ActiveCfg = Debug|Win32
+		{E89614B1-B14E-0BE0-D4FF-9BEDA6961756}.Debug|x86.Build.0 = Debug|Win32
+		{E89614B1-B14E-0BE0-D4FF-9BEDA6961756}.Release|x86.ActiveCfg = Release|Win32
+		{E89614B1-B14E-0BE0-D4FF-9BEDA6961756}.Release|x86.Build.0 = Release|Win32
+		{CCD2C5B0-2E1F-CA94-B994-0CBFBFF94D1D}.Debug|x86.ActiveCfg = Debug|Win32
+		{CCD2C5B0-2E1F-CA94-B994-0CBFBFF94D1D}.Debug|x86.Build.0 = Debug|Win32
+		{CCD2C5B0-2E1F-CA94-B994-0CBFBFF94D1D}.Release|x86.ActiveCfg = Release|Win32
+		{CCD2C5B0-2E1F-CA94-B994-0CBFBFF94D1D}.Release|x86.Build.0 = Release|Win32
+		{3930BA98-5A7D-D298-226D-D01F0C775B59}.Debug|x86.ActiveCfg = Debug|Win32
+		{3930BA98-5A7D-D298-226D-D01F0C775B59}.Debug|x86.Build.0 = Debug|Win32
+		{3930BA98-5A7D-D298-226D-D01F0C775B59}.Release|x86.ActiveCfg = Release|Win32
+		{3930BA98-5A7D-D298-226D-D01F0C775B59}.Release|x86.Build.0 = Release|Win32
+		{2947E04B-6183-C5BE-DB6D-EA66697CCD49}.Debug|x86.ActiveCfg = Debug|Win32
+		{2947E04B-6183-C5BE-DB6D-EA66697CCD49}.Debug|x86.Build.0 = Debug|Win32
+		{2947E04B-6183-C5BE-DB6D-EA66697CCD49}.Release|x86.ActiveCfg = Release|Win32
+		{2947E04B-6183-C5BE-DB6D-EA66697CCD49}.Release|x86.Build.0 = Release|Win32
+		{F5389EC1-5EE4-1001-1465-26EA1DDF5875}.Debug|x86.ActiveCfg = Debug|Win32
+		{F5389EC1-5EE4-1001-1465-26EA1DDF5875}.Debug|x86.Build.0 = Debug|Win32
+		{F5389EC1-5EE4-1001-1465-26EA1DDF5875}.Release|x86.ActiveCfg = Release|Win32
+		{F5389EC1-5EE4-1001-1465-26EA1DDF5875}.Release|x86.Build.0 = Release|Win32
+		{AB27FC44-A47D-E5D5-616A-770934637114}.Debug|x86.ActiveCfg = Debug|Win32
+		{AB27FC44-A47D-E5D5-616A-770934637114}.Debug|x86.Build.0 = Debug|Win32
+		{AB27FC44-A47D-E5D5-616A-770934637114}.Release|x86.ActiveCfg = Release|Win32
+		{AB27FC44-A47D-E5D5-616A-770934637114}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BD207168-E345-4BC5-8388-6FF9E6D7FBBD}
+	EndGlobalSection
+EndGlobal

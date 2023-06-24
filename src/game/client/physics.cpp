@@ -674,7 +674,7 @@ void CPhysicsSystem::PhysicsSimulate()
 								if ( IsBlockedShouldDisableCollisions( pEntity ) )
 								{
 									PhysDisableEntityCollisions( pEntity, pBlocker );
-									pActiveList[i]->RecheckContactPoints();
+									pActiveList[i]->RecheckContactPoints(true);
 									// GetClassname returns a pointer to the same buffer always!
 									//Msg("%s blocked !", pEntity->GetClassname() ); Msg("by %s\n", pBlocker->GetClassname() );
 								}
