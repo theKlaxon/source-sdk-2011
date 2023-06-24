@@ -1178,6 +1178,19 @@ void CConsoleDialog::PerformLayout()
 	m_pConsolePanel->SetBounds( x, y, w, h );
 }
 
+void CConsoleDialog::RequestFocus(int direction)
+{
+	OnRequestFocus(GetVPanel(), NULL);
+}
+//
+//void CConsoleDialog::OnRequestFocus(VPANEL subFocus, VPANEL defaultPanel)
+//{
+//	//if (!ipanel()->IsPopup(subFocus))
+//	//{
+//	//	defaultPanel = m_NavGroup.SetCurrentFocus(subFocus, defaultPanel);
+//	//}
+//	//BaseClass::OnRequestFocus(GetVPanel(), defaultPanel);
+//}
 
 //-----------------------------------------------------------------------------
 // Purpose: brings dialog to the fore
@@ -1185,6 +1198,21 @@ void CConsoleDialog::PerformLayout()
 void CConsoleDialog::Activate()
 {
 	BaseClass::Activate();
+	MoveToFront();
+	//if (IsKeyBoardInputEnabled())
+	//{
+	//	RequestFocus();
+	//}
+	//SetVisible(true);
+	//SetEnabled(true);
+
+	//surface()->SetMinimized(GetVPanel(), false);
+
+	surface()->SetMinimized(m_pConsolePanel->GetVPanel(), false);
+	m_pConsolePanel->MoveToFront();
+	m_pConsolePanel->m_pEntry->SetVisible(true);
+	m_pConsolePanel->m_pEntry->SetEnabled(true);
+	m_pConsolePanel->m_pEntry->SetKeyBoardInputEnabled(true);
 	m_pConsolePanel->m_pEntry->RequestFocus();
 }
 
