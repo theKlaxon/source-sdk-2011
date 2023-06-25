@@ -67,6 +67,7 @@ CBaseModFrame::CBaseModFrame( vgui::Panel *parent, const char *panelName, bool o
 	m_bDelayPushModalInputFocus = false;
 
 	SetConsoleStylePanel( true );
+	SetCloseButtonVisible(false);
 
 	// bodge to disable the frames title image and display our own 
 	//(the frames title has an invalid zpos and does not draw over the garnish)

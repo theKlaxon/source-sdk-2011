@@ -1556,9 +1556,6 @@
     <ClCompile Include="swarm\gameui\swarm\vachievements.cpp">
       <Filter>Source Files\SDK\GameUI\swarm</Filter>
     </ClCompile>
-    <ClCompile Include="swarm\gameui\swarm\vaddonassociation.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
-    </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vaddons.cpp">
       <Filter>Source Files\SDK\GameUI\swarm</Filter>
     </ClCompile>
@@ -1584,9 +1581,6 @@
       <Filter>Source Files\SDK\GameUI\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vcustomcampaigns.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
-    </ClCompile>
-    <ClCompile Include="swarm\gameui\swarm\vdownloadcampaign.cpp">
       <Filter>Source Files\SDK\GameUI\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vdownloads.cpp">
@@ -1701,9 +1695,6 @@
       <Filter>Source Files\SDK\GameUI\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vvideo.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
-    </ClCompile>
-    <ClCompile Include="swarm\gameui\swarm\vvoteoptions.cpp">
       <Filter>Source Files\SDK\GameUI\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\vgui\nb_button.cpp">
@@ -3718,9 +3709,6 @@
     <ClInclude Include="swarm\gameui\swarm\vachievements.h">
       <Filter>Source Files\SDK\GameUI\swarm</Filter>
     </ClInclude>
-    <ClInclude Include="swarm\gameui\swarm\vaddonassociation.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
-    </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vaddons.h">
       <Filter>Source Files\SDK\GameUI\swarm</Filter>
     </ClInclude>
@@ -3746,9 +3734,6 @@
       <Filter>Source Files\SDK\GameUI\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vcustomcampaigns.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
-    </ClInclude>
-    <ClInclude Include="swarm\gameui\swarm\vdownloadcampaign.h">
       <Filter>Source Files\SDK\GameUI\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vdownloads.h">
@@ -3862,9 +3847,6 @@
     <ClInclude Include="swarm\gameui\swarm\vvideo.h">
       <Filter>Source Files\SDK\GameUI\swarm</Filter>
     </ClInclude>
-    <ClInclude Include="swarm\gameui\swarm\vvoteoptions.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
-    </ClInclude>
     <ClInclude Include="swarm\gameui\basepanel.h">
       <Filter>Source Files\SDK\GameUI</Filter>
     </ClInclude>
@@ -3897,6 +3879,9 @@
     </ClInclude>
     <ClInclude Include="sdk\clientmode_skeleton.h">
       <Filter>Source Files\SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk_gameui_helpers.h">
+      <Filter>Source Files\SDK\GameUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -850,7 +850,6 @@
     <ClCompile Include="swarm\gameui\swarm\uigamedata_invite.cpp" />
     <ClCompile Include="swarm\gameui\swarm\uigamedata_storage.cpp" />
     <ClCompile Include="swarm\gameui\swarm\vachievements.cpp" />
-    <ClCompile Include="swarm\gameui\swarm\vaddonassociation.cpp" />
     <ClCompile Include="swarm\gameui\swarm\vaddons.cpp" />
     <ClCompile Include="swarm\gameui\swarm\vattractscreen.cpp" />
     <ClCompile Include="swarm\gameui\swarm\vaudio.cpp" />
@@ -860,7 +859,6 @@
     <ClCompile Include="swarm\gameui\swarm\vcontrolleroptionsbuttons.cpp" />
     <ClCompile Include="swarm\gameui\swarm\vcontrolleroptionssticks.cpp" />
     <ClCompile Include="swarm\gameui\swarm\vcustomcampaigns.cpp" />
-    <ClCompile Include="swarm\gameui\swarm\vdownloadcampaign.cpp" />
     <ClCompile Include="swarm\gameui\swarm\vdownloads.cpp" />
     <ClCompile Include="swarm\gameui\swarm\vdropdownmenu.cpp" />
     <ClCompile Include="swarm\gameui\swarm\vflyoutmenu.cpp" />
@@ -899,7 +897,6 @@
     <ClCompile Include="swarm\gameui\swarm\vsteamcloudconfirmation.cpp" />
     <ClCompile Include="swarm\gameui\swarm\vtransitionscreen.cpp" />
     <ClCompile Include="swarm\gameui\swarm\vvideo.cpp" />
-    <ClCompile Include="swarm\gameui\swarm\vvoteoptions.cpp" />
     <ClCompile Include="swarm\gameui\sys_utils.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
@@ -1104,6 +1101,7 @@
     <ClInclude Include="replay_ragdoll.h" />
     <ClInclude Include="sdk\clientmode_skeleton.h" />
     <ClInclude Include="sdk\c_sdk_player.h" />
+    <ClInclude Include="sdk_gameui_helpers.h" />
     <ClInclude Include="spatialentitymgr.h" />
     <ClInclude Include="swarm\gameui\backgroundmenubutton.h" />
     <ClInclude Include="swarm\gameui\basepaenl.h" />
@@ -1155,7 +1153,6 @@
     <ClInclude Include="swarm\gameui\swarm\uiavatarimage.h" />
     <ClInclude Include="swarm\gameui\swarm\uigamedata.h" />
     <ClInclude Include="swarm\gameui\swarm\vachievements.h" />
-    <ClInclude Include="swarm\gameui\swarm\vaddonassociation.h" />
     <ClInclude Include="swarm\gameui\swarm\vaddons.h" />
     <ClInclude Include="swarm\gameui\swarm\vattractscreen.h" />
     <ClInclude Include="swarm\gameui\swarm\vaudio.h" />
@@ -1165,7 +1162,6 @@
     <ClInclude Include="swarm\gameui\swarm\vcontrolleroptionsbuttons.h" />
     <ClInclude Include="swarm\gameui\swarm\vcontrolleroptionssticks.h" />
     <ClInclude Include="swarm\gameui\swarm\vcustomcampaigns.h" />
-    <ClInclude Include="swarm\gameui\swarm\vdownloadcampaign.h" />
     <ClInclude Include="swarm\gameui\swarm\vdownloads.h" />
     <ClInclude Include="swarm\gameui\swarm\vdropdownmenu.h" />
     <ClInclude Include="swarm\gameui\swarm\vflyoutmenu.h" />
@@ -1203,7 +1199,6 @@
     <ClInclude Include="swarm\gameui\swarm\vsteamcloudconfirmation.h" />
     <ClInclude Include="swarm\gameui\swarm\vtransitionscreen.h" />
     <ClInclude Include="swarm\gameui\swarm\vvideo.h" />
-    <ClInclude Include="swarm\gameui\swarm\vvoteoptions.h" />
     <ClInclude Include="swarm\gameui\sys_utils.h" />
     <ClInclude Include="swarm\gameui\textentrybox.h" />
     <ClInclude Include="swarm\gameui\urlbutton.h" />

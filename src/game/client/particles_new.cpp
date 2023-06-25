@@ -32,6 +32,9 @@ extern ConVar cl_particles_show_bbox;
 //-----------------------------------------------------------------------------
 CNewParticleEffect::CNewParticleEffect( CBaseEntity *pOwner, CParticleSystemDefinition *pEffect )
 {
+	// TODO: FIX PARTICLES!!!!!!!!!
+	return;
+
 	m_hOwner = pOwner;
 	if ( g_pResourceAccessControl )
 	{

@@ -1143,19 +1143,7 @@ void GameLobby::MsgNoValidMissionChapter( KeyValues *pSettings )
 		CUIGameData::Get()->OnEvent( kvDlcNotify );
 		return;
 	}
-
-	const char *szCampaignWebsite = pSettings->GetString( "game/missioninfo/website", NULL );
-
-	if ( szCampaignWebsite && *szCampaignWebsite )
-	{
-		if ( pSettings )
-			pSettings->SetString( "game/missioninfo/from", "Lobby" );
-
-		CBaseModPanel::GetSingleton().OpenWindow( WT_DOWNLOADCAMPAIGN,
-			CBaseModPanel::GetSingleton().GetWindow( CBaseModPanel::GetSingleton().GetActiveWindowType() ),
-			true, pSettings );
-	}
-	else
+	
 	{
 		GenericConfirmation::Data_t data;
 

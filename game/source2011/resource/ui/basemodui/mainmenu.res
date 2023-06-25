@@ -51,9 +51,8 @@
 		"xpos"						"88"	[$GAMECONSOLE && ($GAMECONSOLEWIDE && !$ANAMORPHIC)]
 		"xpos"						"63"	[$GAMECONSOLE && (!$GAMECONSOLEWIDE || $ANAMORPHIC)]	
 		"xpos"						"88"	[!$GAMECONSOLE && $WIN32WIDE]
-		"xpos"						"63"	[!$GAMECONSOLE && !$WIN32WIDE]	
-		"ypos"						"340"	[$GAMECONSOLE]  
-		"ypos"						"288"	[!$GAMECONSOLE]   
+		"xpos"						"63"	[!$GAMECONSOLE && !$WIN32WIDE]
+		"ypos"						"288"
 		"wide"						"220"
 		"tall"						"20"
 		"autoResize"				"1"
@@ -62,11 +61,10 @@
 		"enabled"					"1"
 		"tabPosition"				"0"
 		"navUp"						"BtnPlaySolo"
-		"navDown"					"BtnQuit"	[$GAMECONSOLE]
-		"navDown"					"BtnQuit"		[!$GAMECONSOLE]
+		"navDown"					"BtnQuit"
 		"labelText"					"#PORTAL2_MainMenu_Options"
 		"style"						"MainMenuButton"
-		"command"					"FlmOptionsFlyout"
+		"command"					"Options" // was using FlmOptionsFlyout
 		"ActivationType"			"1"
 	}
 	

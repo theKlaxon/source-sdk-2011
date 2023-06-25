@@ -1095,21 +1095,6 @@ void FoundGames::OnCommand( const char *command )
 			PostMessage( pSelectedItem, new KeyValues( "JoinGame" ) );
 		}
 	}
-	else if ( !V_strcmp( command, "DownloadSelected" ) || !V_strcmp( command, "Website" ) )
-	{
-		FoundGameListItem *pSelectedItem = 	static_cast< FoundGameListItem * >( m_GplGames->GetSelectedPanelItem() );
-		if ( pSelectedItem )
-		{
-			// Open the download window
-			KeyValues *pSelectedDetails = pSelectedItem->GetFullInfo().mpGameDetails;
-			if ( pSelectedDetails )
-			{
-				pSelectedDetails->SetString( "game/missioninfo/from", "Join" );
-				pSelectedDetails->SetString( "game/missioninfo/action", command );
-			}
-			CBaseModPanel::GetSingleton().OpenWindow( WT_DOWNLOADCAMPAIGN, this, true, pSelectedDetails );
-		}
-	}
 	else if ( V_strcmp( command, "PlayerDropDown" ) == 0 )
 	{
 		DropDownMenu *pDrpPlayer = dynamic_cast< DropDownMenu * > ( FindChildByName( "DrpSelectedPlayerName" ) );

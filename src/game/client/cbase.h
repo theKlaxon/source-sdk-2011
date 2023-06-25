@@ -60,4 +60,8 @@ struct studiohdr_t;
 #include "npcevent.h"
 #include "debugoverlay_shared.h"
 
+#ifdef P2_DLL
+#include "sdk_gameui_helpers.h"
+#endif
+
 #endif // CBASE_H

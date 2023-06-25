@@ -20,8 +20,7 @@
 		"ControlName"			"BaseModHybridButton"
 		"fieldName"				"BtnEditBindings"
 		"xpos"				"26"
-		"ypos"				"128" [!$OSX]
-		"ypos"				"170" [$OSX]
+		"ypos"				"128"
 		"wide"				"500"
 		"tall"					"20"
 		"visible"				"1"

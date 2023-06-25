@@ -1955,7 +1955,9 @@ void CCollisionEvent::ShutdownFriction( friction_t &friction )
 
 void CCollisionEvent::UpdateRemoveObjects()
 {
+#ifndef USE_VOLT
 	Assert(!PhysIsInCallback());
+#endif
 	for ( int i = 0 ; i < m_removeObjects.Count(); i++ )
 	{
 		UTIL_Remove(m_removeObjects[i]);

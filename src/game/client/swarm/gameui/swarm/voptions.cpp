@@ -23,6 +23,7 @@ BaseClass( parent, panelName )
 	SetDeleteSelfOnClose(true);
 	SetProportional( true );
 	SetTitle( "#L4D360UI_Options", false );
+	SetCloseButtonVisible(false);
 
 	m_BtnGame = new BaseModHybridButton( this, "BtnGame", "#L4D360UI_Game", this, "Game" );
 	m_BtnAudioVideo = new BaseModHybridButton( this, "BtnAudioVideo", "#L4D360UI_AudioVideo", this, "AudioVideo" );
@@ -69,16 +70,22 @@ void Options::OnCommand(const char *command)
 	{
 		CBaseModPanel::GetSingleton().OpenWindow(WT_GAMEOPTIONS, this);
 	}
-	else if(!Q_strcmp(command, "AudioVideo"))
+	else if (!Q_strcmp(command, "Audio"))
 	{
-		CBaseModPanel::GetSingleton().OpenWindow(WT_AUDIOVIDEO, this);
+		CBaseModPanel::GetSingleton().OpenWindow(WT_AUDIO, this);
 	}
-	else if(!Q_strcmp(command, "Controller"))
+	else if (!Q_strcmp(command, "Video"))
 	{
-		CBaseModPanel::GetSingleton().OpenWindow(WT_CONTROLLER, this);
+		CBaseModPanel::GetSingleton().OpenWindow(WT_VIDEO, this);
 	}
-	else if(!Q_strcmp(command, "Storage"))
+	else if(!Q_strcmp(command, "KeyboardMouse"))
 	{
-		CUIGameData::Get()->SelectStorageDevice( new CChangeStorageDevice( iController ) );
+		CBaseModPanel::GetSingleton().OpenWindow(WT_KEYBOARDMOUSE, this);
+	}
+	else if(!Q_strcmp(command, "Back"))
+	{
+		// get back to the main menu
+		MakeVisisble(WT_MAINMENU);
+		Close();
 	}
 }

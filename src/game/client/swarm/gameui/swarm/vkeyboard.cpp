@@ -136,7 +136,10 @@ void VKeyboard::OnCommand(const char *command)
 	if( Q_stricmp( "Back", command ) == 0 )
 	{
 		m_pOptionsSubKeyboard->OnApplyChanges();
-		OnKeyCodePressed( KEY_XBUTTON_B );
+		MakeVisisble(WT_OPTIONS);
+		Close();
+
+		//OnKeyCodePressed( KEY_XBUTTON_B );
 	}
 	else if( Q_stricmp( "Cancel", command ) == 0 )
 	{

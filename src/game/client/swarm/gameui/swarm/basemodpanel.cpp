@@ -27,7 +27,6 @@
 // BaseModUI High-level windows
 #include "VTransitionScreen.h"
 #include "VAchievements.h"
-#include "vaddonassociation.h"
 #include "VAddons.h"
 #include "VAttractScreen.h"
 #include "VAudio.h"
@@ -387,11 +386,7 @@ CBaseModFrame* CBaseModPanel::OpenWindow(const WINDOW_TYPE & wt, CBaseModFrame *
 		case WT_INGAMEKICKPLAYERLIST:
 			m_Frames[wt] = new InGameKickPlayerList(this, "InGameKickPlayerList");
 			break;
-
-		case WT_VOTEOPTIONS:
-			m_Frames[wt] = new VoteOptions(this, "VoteOptions");
-			break;
-
+		
 		case WT_KEYBOARDMOUSE:
 #if defined( _X360 )
 			// not for xbox
@@ -478,16 +473,6 @@ CBaseModFrame* CBaseModPanel::OpenWindow(const WINDOW_TYPE & wt, CBaseModFrame *
 #endif
 			break;
 
-		case WT_DOWNLOADCAMPAIGN:
-#if defined( _X360 )
-			// not for xbox
-			Assert( 0 );
-			break;
-#else
-			m_Frames[ wt ] = new DownloadCampaign( this, "DownloadCampaign" );
-#endif
-			break;
-
 		case WT_LEADERBOARD:
 			m_Frames[ wt ] = new Leaderboard( this );
 			break;
@@ -509,16 +494,6 @@ CBaseModFrame* CBaseModPanel::OpenWindow(const WINDOW_TYPE & wt, CBaseModFrame *
 			break;
 #else
 			m_Frames[wt] = new VJukebox( this, "Jukebox" );
-#endif
-			break;
-
-		case WT_ADDONASSOCIATION:
-#if defined( _X360 )
-			// not for xbox
-			Assert( 0 );
-			break;
-#else
-			m_Frames[wt] = new AddonAssociation( this, "AddonAssociation" );
 #endif
 			break;
 
@@ -549,6 +524,7 @@ CBaseModFrame* CBaseModPanel::OpenWindow(const WINDOW_TYPE & wt, CBaseModFrame *
 		newNav->SetWindowType(wt);
 		//newNav->SetVisible( false );
 		newNav->SetVisible( true );
+		newNav->SetCloseButtonVisible(false);
 	}
 
 	newNav->SetDataSettings( pParameters );
@@ -1564,15 +1540,7 @@ void CBaseModPanel::OnEvent( KeyValues *pEvent )
 
 			CloseAllWindows( CLOSE_POLICY_EVEN_MSGS | CLOSE_POLICY_EVEN_LOADING );
 			OpenFrontScreen();
-
-			const char *szCampaignWebsite = pSettings->GetString( "game/missioninfo/website", NULL );
-			if ( szCampaignWebsite && *szCampaignWebsite )
-			{
-				OpenWindow( WT_DOWNLOADCAMPAIGN,
-					GetWindow( CBaseModPanel::GetSingleton().GetActiveWindowType() ),
-					true, pSettings );
-			}
-			else
+			
 			{
 				GenericConfirmation::Data_t data;
 

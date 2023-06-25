@@ -764,18 +764,18 @@ void Video::OnThink()
 		m_btnUseRecommended = dynamic_cast< BaseModHybridButton* >( FindChildByName( "BtnUseRecommended" ) );
 		needsActivate = true;
 	}
-// 
-// 	if( !m_btnCancel )
-// 	{
-// 		m_btnCancel = dynamic_cast< BaseModHybridButton* >( FindChildByName( "BtnCancel" ) );
-// 		needsActivate = true;
-// 	}
+ 
+ 	if( !m_btnCancel )
+ 	{
+ 		m_btnCancel = dynamic_cast< BaseModHybridButton* >( FindChildByName( "BtnCancel" ) );
+ 		needsActivate = true;
+ 	}
 
-// 	if( !m_btnDone )
-// 	{
-// 		m_btnDone = dynamic_cast< BaseModHybridButton* >( FindChildByName( "BtnDone" ) );
-// 		needsActivate = true;
-// 	}
+ 	if( !m_btnDone )
+ 	{
+ 		m_btnDone = dynamic_cast< BaseModHybridButton* >( FindChildByName( "BtnDone" ) );
+ 		needsActivate = true;
+ 	}
 
 	if( !m_btn3rdPartyCredits )
 	{
@@ -1050,11 +1050,15 @@ void Video::OnCommand(const char *command)
 	else if( Q_stricmp( "Cancel", command ) == 0 )
 	{
 		m_bDirtyValues = false;
-		OnKeyCodePressed( ButtonCodeToJoystickButtonCode( KEY_XBUTTON_B, CBaseModPanel::GetSingleton().GetLastActiveUserId() ) );
+		MakeVisisble(WT_OPTIONS);
+		Close();
+		//OnKeyCodePressed( ButtonCodeToJoystickButtonCode( KEY_XBUTTON_B, CBaseModPanel::GetSingleton().GetLastActiveUserId() ) );
 	}
 	else if( Q_stricmp( "Back", command ) == 0 )
 	{
-		OnKeyCodePressed( ButtonCodeToJoystickButtonCode( KEY_XBUTTON_B, CBaseModPanel::GetSingleton().GetLastActiveUserId() ) );
+		MakeVisisble(WT_OPTIONS);
+		Close();
+		//OnKeyCodePressed( ButtonCodeToJoystickButtonCode( KEY_XBUTTON_B, CBaseModPanel::GetSingleton().GetLastActiveUserId() ) );
 	}
 	else if( Q_stricmp( "3rdPartyCredits", command ) == 0 )
 	{
