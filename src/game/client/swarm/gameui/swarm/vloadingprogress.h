@@ -39,6 +39,8 @@ public:
 	LoadingProgress( vgui::Panel *parent, const char *panelName, LoadingWindowType eLoadingType );
 	~LoadingProgress();
 
+	bool				LoadChapterData();
+
 	virtual void		Close();
 
 	void				SetProgress( float progress );
@@ -79,6 +81,9 @@ private:
 	KeyValues			*m_pMissionInfo;
 	KeyValues			*m_pChapterInfo;
 	KeyValues			*m_pDefaultPosterDataKV;
+
+	KeyValues*			m_pChapterPostersKV;
+
 	int					m_botFlags;
 	bool				m_bValid;
 
@@ -90,6 +95,7 @@ private:
 	bool				m_bDrawPoster;
 	bool				m_bDrawProgress;
 	bool				m_bDrawSpinner;
+	bool				m_bDrawChapterPosters;
 
 	float				m_flPeakProgress;
 

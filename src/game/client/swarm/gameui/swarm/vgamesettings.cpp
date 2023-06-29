@@ -188,8 +188,8 @@ void GameSettings::Activate()
 	
 	// On X360 we cannot allow selecting server type until the
 	// session is actually created
-	if ( IsX360() && showServerType )
-		showServerType = IsEditingExistingLobby();
+	//if ( IsX360() && showServerType )
+	//	showServerType = IsEditingExistingLobby();
 
 	//bool showSearchControls = IsCustomMatchSearchCriteria();
 
@@ -355,12 +355,7 @@ void GameSettings::OnKeyCodePressed(KeyCode code)
 	case KEY_XBUTTON_B:
 		{
 			CBaseModPanel::GetSingleton().PlayUISound( UISOUND_BACK );
-
-			if ( IsEditingExistingLobby() )
-			{
-				NavigateBack();
-			}
-			else
+			
 			{
 				if ( m_bCloseSessionOnClose )
 				{
@@ -512,11 +507,6 @@ void GameSettings::OnCommand(const char *command)
 		char const *szNetwork = m_pSettings->GetString( "system/network", "offline" );
 		if ( !Q_stricmp( szNetwork, "offline" ) )
 		{
-			if ( IsCustomMatchSearchCriteria() )
-			{
-				DoCustomMatch( "lobby" );
-			}
-			else
 			{
 				Navigate();
 			}
@@ -553,7 +543,6 @@ void GameSettings::OnCommand(const char *command)
 	}
 	else if ( !Q_strcmp( command, "Create" ) )
 	{
-		Assert( !IsEditingExistingLobby() );
 		g_pMatchFramework->CreateSession( m_pSettings );
 	}
 	else if ( char const *szNetworkType = StringAfterPrefix( command, "GameNetwork_" ) )
@@ -781,29 +770,6 @@ void GameSettings::ApplySchemeSettings( vgui::IScheme *pScheme )
 	Activate();
 }
 
-bool GameSettings::IsEditingExistingLobby()
-{
-	vgui::Panel * backPanel = GetNavBack();
-	CBaseModFrame *pLobby = CBaseModPanel::GetSingleton().GetWindow( WT_GAMELOBBY );
-	if ( pLobby && backPanel == pLobby )
-	{
-		return true;
-	}
-
-	return false;
-}
-
-bool GameSettings::IsCustomMatchSearchCriteria()
-{
-	if ( IsEditingExistingLobby() )
-		return false;
-
-	if ( Q_stricmp( "custommatch", m_pSettings->GetString( "options/action", "" ) ) )
-		return false;
-
-	return true;
-}
-
 void GameSettings::OnClose()
 {
 	BaseClass::OnClose();
@@ -835,11 +801,6 @@ void GameSettings::Navigate()
 	char const *szNetwork = m_pSettings->GetString( "system/network", "offline" );
 	char const *szAccess = m_pSettings->GetString( "system/access", "public" );
 
-	if ( IsEditingExistingLobby() )
-	{
-		NavigateBack();//if we were opened from the game lobby nav back to the game lobby.
-	}
-	else
 	{
 		if ( !Q_stricmp( "LIVE", szNetwork ) &&
 			 !Q_stricmp( "public", szAccess ) )

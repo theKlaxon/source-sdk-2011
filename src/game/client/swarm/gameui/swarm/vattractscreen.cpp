@@ -1059,42 +1059,44 @@ void CAttractScreen::ShowPressStart()
 
 void CAttractScreen::ShowSignInDialog( int iPrimaryUser, int iSecondaryUser, BladeSignInUI_t eForceSignin )
 {
-	s_idPrimaryUser = iPrimaryUser;
-	s_idSecondaryUser = -1;
-	s_bSecondaryUserIsGuest = 0;
+	return;
 
-	// Whoever presses start becomes the primary user
-	// and determines who's config we load, etc.
-	//g_pInputSystem->SetPrimaryUserId( iPrimaryUser );
+	//s_idPrimaryUser = iPrimaryUser;
+	//s_idSecondaryUser = -1;
+	//s_bSecondaryUserIsGuest = 0;
 
-	// Lock the UI convar options to a particular splitscreen player slot
-	SetGameUIActiveSplitScreenPlayerSlot( 0 );
+	//// Whoever presses start becomes the primary user
+	//// and determines who's config we load, etc.
+	////g_pInputSystem->SetPrimaryUserId( iPrimaryUser );
 
-	HidePressStart();
-	m_bHidePressStart = true;
+	//// Lock the UI convar options to a particular splitscreen player slot
+	//SetGameUIActiveSplitScreenPlayerSlot( 0 );
 
-	if ( iSecondaryUser >= 0 )
-	{
-		s_idSecondaryUser = iSecondaryUser;
-		StartWaitingForBlade2();
-	}
-	else if ( eForceSignin == SIGNIN_DOUBLE )
-	{
-		StartWaitingForBlade2();
-	}
-	else if ( IsPrimaryUserSignedInProperly() )
-	{
-		StartGame( s_idPrimaryUser );
-	}
-	else if ( eForceSignin == SIGNIN_SINGLE )
-	{
-		StartWaitingForBlade1();
-	}
-	else
-	{
-		CBaseModPanel::GetSingleton().SetLastActiveUserId( iPrimaryUser );
-		CBaseModPanel::GetSingleton().OpenWindow( WT_SIGNINDIALOG, this, false );
-	}
+	//HidePressStart();
+	//m_bHidePressStart = true;
+
+	//if ( iSecondaryUser >= 0 )
+	//{
+	//	s_idSecondaryUser = iSecondaryUser;
+	//	StartWaitingForBlade2();
+	//}
+	//else if ( eForceSignin == SIGNIN_DOUBLE )
+	//{
+	//	StartWaitingForBlade2();
+	//}
+	//else if ( IsPrimaryUserSignedInProperly() )
+	//{
+	//	StartGame( s_idPrimaryUser );
+	//}
+	//else if ( eForceSignin == SIGNIN_SINGLE )
+	//{
+	//	StartWaitingForBlade1();
+	//}
+	//else
+	//{
+	//	CBaseModPanel::GetSingleton().SetLastActiveUserId( iPrimaryUser );
+	//	CBaseModPanel::GetSingleton().OpenWindow( WT_SIGNINDIALOG, this, false );
+	//}
 }
 
 static void PlayGameWithTemporaryProfile();

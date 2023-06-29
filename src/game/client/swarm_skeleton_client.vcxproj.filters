@@ -61,14 +61,11 @@
     <Filter Include="Source Files\SDK\Shared">
       <UniqueIdentifier>{e78db3f9-0499-4ada-ada2-42ee04a543d6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\SDK\GameUI">
-      <UniqueIdentifier>{7c14a043-4247-44ce-9a6f-b952b776825a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\SDK\GameUI\swarm">
-      <UniqueIdentifier>{8f9f0679-ad15-4fad-b1d0-6f8cf59f5b18}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\SDK\Replay">
       <UniqueIdentifier>{cd762f8f-0f96-432a-9072-640afe071298}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameUI - Embedded\swarm">
+      <UniqueIdentifier>{8f9f0679-ad15-4fad-b1d0-6f8cf59f5b18}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1533,187 +1530,151 @@
       <Filter>Patch</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\basemodframe.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\basemodpanel.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\gamemodes.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\uiavatarimage.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\uigamedata.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\uigamedata_invite.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\uigamedata_storage.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vachievements.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vaddons.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vattractscreen.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vaudio.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vaudiovideo.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vcloud.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vcontrolleroptions.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vcontrolleroptionsbuttons.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vcontrolleroptionssticks.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vcustomcampaigns.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vdownloads.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vdropdownmenu.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vflyoutmenu.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vfooterpanel.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vfoundgames.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vfoundgroupgames.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vfoundpublicgames.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
-    </ClCompile>
-    <ClCompile Include="swarm\gameui\swarm\vgamelobby.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vgamelobbychat.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vgameoptions.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vgamesettings.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vgenericconfirmation.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vgenericpanellist.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vgenericwaitscreen.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vgetlegacydata.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vhybridbutton.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vingamechapterselect.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vingamedifficultyselect.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vingamekickplayerlist.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vingamemainmenu.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vjukebox.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vkeyboard.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vkeyboardmouse.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
-    </ClCompile>
-    <ClCompile Include="swarm\gameui\swarm\vleaderboard.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vloadingprogress.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vmainmenu.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vmenubackground.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vmultiplayer.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\voptions.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vpasswordentry.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
-    </ClCompile>
-    <ClCompile Include="swarm\gameui\swarm\vquickjoin.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
-    </ClCompile>
-    <ClCompile Include="swarm\gameui\swarm\vquickjoingroups.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
-    </ClCompile>
-    <ClCompile Include="swarm\gameui\swarm\vsignindialog.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vslidercontrol.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vspinnercontrol.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
-    </ClCompile>
-    <ClCompile Include="swarm\gameui\swarm\vsteamcloudconfirmation.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vtransitionscreen.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="swarm\gameui\swarm\vvideo.cpp">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
-    </ClCompile>
-    <ClCompile Include="swarm\vgui\nb_button.cpp">
-      <Filter>Source Files\SDK\GameUI</Filter>
-    </ClCompile>
-    <ClCompile Include="swarm\vgui\nb_header_footer.cpp">
-      <Filter>Source Files\SDK\GameUI</Filter>
-    </ClCompile>
-    <ClCompile Include="swarm\vgui\nb_horiz_list.cpp">
-      <Filter>Source Files\SDK\GameUI</Filter>
-    </ClCompile>
-    <ClCompile Include="swarm\vgui\nb_island.cpp">
-      <Filter>Source Files\SDK\GameUI</Filter>
-    </ClCompile>
-    <ClCompile Include="swarm\vgui\nb_select_save_entry.cpp">
-      <Filter>Source Files\SDK\GameUI</Filter>
-    </ClCompile>
-    <ClCompile Include="swarm\vgui\nb_select_save_panel.cpp">
-      <Filter>Source Files\SDK\GameUI</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClCompile>
     <ClCompile Include="replay_ragdoll.cpp">
       <Filter>Source Files\SDK\Replay</Filter>
@@ -1753,6 +1714,24 @@
     </ClCompile>
     <ClCompile Include="sdk\sdk_rootpanel.cpp">
       <Filter>Source Files\SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="swarm\vgui\nb_button.cpp">
+      <Filter>Source Files\GameUI - Embedded</Filter>
+    </ClCompile>
+    <ClCompile Include="swarm\vgui\nb_header_footer.cpp">
+      <Filter>Source Files\GameUI - Embedded</Filter>
+    </ClCompile>
+    <ClCompile Include="swarm\vgui\nb_horiz_list.cpp">
+      <Filter>Source Files\GameUI - Embedded</Filter>
+    </ClCompile>
+    <ClCompile Include="swarm\vgui\nb_island.cpp">
+      <Filter>Source Files\GameUI - Embedded</Filter>
+    </ClCompile>
+    <ClCompile Include="swarm\vgui\nb_select_save_entry.cpp">
+      <Filter>Source Files\GameUI - Embedded</Filter>
+    </ClCompile>
+    <ClCompile Include="swarm\vgui\nb_select_save_panel.cpp">
+      <Filter>Source Files\GameUI - Embedded</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -3689,187 +3668,145 @@
       <Filter>Source Files\SDK\Re-includes</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\basemodframe.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\basemodpanel.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\basemodui.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\gamemodes.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\uiavatarimage.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\uigamedata.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vachievements.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vaddons.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vattractscreen.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vaudio.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vaudiovideo.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vcloud.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vcontrolleroptions.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vcontrolleroptionsbuttons.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vcontrolleroptionssticks.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vcustomcampaigns.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vdownloads.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vdropdownmenu.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vflyoutmenu.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vfooterpanel.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vfoundgames.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vfoundgroupgames.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vfoundpublicgames.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
-    </ClInclude>
-    <ClInclude Include="swarm\gameui\swarm\vgamelobby.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vgamelobbychat.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vgameoptions.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vgamesettings.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vgenericconfirmation.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vgenericpanellist.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vgenericwaitscreen.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vgetlegacydata.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vhybridbutton.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vingamechapterselect.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vingamedifficultyselect.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vingamekickplayerlist.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vingamemainmenu.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vjukebox.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vkeyboard.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vkeyboardmouse.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
-    </ClInclude>
-    <ClInclude Include="swarm\gameui\swarm\vleaderboard.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vloadingprogress.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vmainmenu.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vmultiplayer.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\voptions.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vpasswordentry.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
-    </ClInclude>
-    <ClInclude Include="swarm\gameui\swarm\vquickjoin.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
-    </ClInclude>
-    <ClInclude Include="swarm\gameui\swarm\vquickjoingroups.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
-    </ClInclude>
-    <ClInclude Include="swarm\gameui\swarm\vsignindialog.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vslidercontrol.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vspinnercontrol.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
-    </ClInclude>
-    <ClInclude Include="swarm\gameui\swarm\vsteamcloudconfirmation.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vtransitionscreen.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="swarm\gameui\swarm\vvideo.h">
-      <Filter>Source Files\SDK\GameUI\swarm</Filter>
-    </ClInclude>
-    <ClInclude Include="swarm\gameui\basepanel.h">
-      <Filter>Source Files\SDK\GameUI</Filter>
-    </ClInclude>
-    <ClInclude Include="swarm\gameui\cdkeyentrydialog.h">
-      <Filter>Source Files\SDK\GameUI</Filter>
-    </ClInclude>
-    <ClInclude Include="swarm\vgui\nb_button.h">
-      <Filter>Source Files\SDK\GameUI</Filter>
-    </ClInclude>
-    <ClInclude Include="swarm\vgui\nb_header_footer.h">
-      <Filter>Source Files\SDK\GameUI</Filter>
-    </ClInclude>
-    <ClInclude Include="swarm\vgui\nb_horiz_list.h">
-      <Filter>Source Files\SDK\GameUI</Filter>
-    </ClInclude>
-    <ClInclude Include="swarm\vgui\nb_island.h">
-      <Filter>Source Files\SDK\GameUI</Filter>
-    </ClInclude>
-    <ClInclude Include="swarm\vgui\nb_select_save_entry.h">
-      <Filter>Source Files\SDK\GameUI</Filter>
-    </ClInclude>
-    <ClInclude Include="swarm\vgui\nb_select_save_panel.h">
-      <Filter>Source Files\SDK\GameUI</Filter>
+      <Filter>Source Files\GameUI - Embedded\swarm</Filter>
     </ClInclude>
     <ClInclude Include="replay_ragdoll.h">
       <Filter>Source Files\SDK\Replay</Filter>
@@ -3880,8 +3817,32 @@
     <ClInclude Include="sdk\clientmode_skeleton.h">
       <Filter>Source Files\SDK</Filter>
     </ClInclude>
+    <ClInclude Include="swarm\gameui\basepanel.h">
+      <Filter>Source Files\GameUI - Embedded</Filter>
+    </ClInclude>
+    <ClInclude Include="swarm\gameui\cdkeyentrydialog.h">
+      <Filter>Source Files\GameUI - Embedded</Filter>
+    </ClInclude>
+    <ClInclude Include="swarm\vgui\nb_button.h">
+      <Filter>Source Files\GameUI - Embedded</Filter>
+    </ClInclude>
+    <ClInclude Include="swarm\vgui\nb_header_footer.h">
+      <Filter>Source Files\GameUI - Embedded</Filter>
+    </ClInclude>
+    <ClInclude Include="swarm\vgui\nb_horiz_list.h">
+      <Filter>Source Files\GameUI - Embedded</Filter>
+    </ClInclude>
+    <ClInclude Include="swarm\vgui\nb_island.h">
+      <Filter>Source Files\GameUI - Embedded</Filter>
+    </ClInclude>
+    <ClInclude Include="swarm\vgui\nb_select_save_entry.h">
+      <Filter>Source Files\GameUI - Embedded</Filter>
+    </ClInclude>
+    <ClInclude Include="swarm\vgui\nb_select_save_panel.h">
+      <Filter>Source Files\GameUI - Embedded</Filter>
+    </ClInclude>
     <ClInclude Include="sdk_gameui_helpers.h">
-      <Filter>Source Files\SDK\GameUI</Filter>
+      <Filter>Source Files\GameUI - Embedded</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

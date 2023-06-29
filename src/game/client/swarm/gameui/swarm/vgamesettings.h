@@ -44,12 +44,8 @@ protected:
 
 	void Navigate();
 
-	bool IsCustomMatchSearchCriteria();
-	bool IsEditingExistingLobby();
-
 protected:
 	void UpdateMissionImage();
-	int CountChaptersInCurrentCampaign();
 
 	void SelectNetworkAccess( char const *szNetworkType, char const *szAccessType );
 	void DoCustomMatch( char const *szGameState );

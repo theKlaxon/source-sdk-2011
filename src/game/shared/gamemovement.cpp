@@ -2627,21 +2627,22 @@ bool CGameMovement::CheckJumpButton( void )
 
 	float flGroundFactor = 1.0f;
 
-#ifndef P2_DLL
+//#ifndef P2_DLL
 	if (player->m_pSurfaceData)
 	{
 		flGroundFactor = player->m_pSurfaceData->game.jumpFactor; 
 	}
-#else 
-	flGroundFactor = sv_jumpFactor.GetFloat();
-#endif
+//#else 
+//	flGroundFactor = sv_jumpFactor.GetFloat();
+//#endif
 
 	float flMul;
 	if ( g_bMovementOptimizations )
 	{
-#if defined(HL2_DLL) || defined(HL2_CLIENT_DLL)
+#if defined(HL2_DLL) || defined(HL2_CLIENT_DLL) || defined(P2_DLL)
 		Assert( sv_gravity.GetFloat() == 600.0f );
-		flMul = 160.0f;	// approx. 21 units.
+		//flMul = 160.0f;	// approx. 21 units.
+		flMul = 228.571429f;	// approx. 30 units.
 #else
 		Assert( sv_gravity.GetFloat() == 800.0f );
 		flMul = 268.3281572999747f;

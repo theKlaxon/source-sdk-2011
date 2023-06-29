@@ -120,15 +120,6 @@ void InGameMainMenu::OnCommand( const char *command )
 		engine->ClientCmd("gameui_hide");
 		engine->ClientCmd("go_away_from_keyboard");
 	}
-	else if (!Q_strcmp(command, "BootPlayer"))
-	{
-#if defined ( _X360 )
-		OnCommand( "ReturnToGame" );
-		engine->ClientCmd("togglescores");
-#else
-		CBaseModPanel::GetSingleton().OpenWindow(WT_INGAMEKICKPLAYERLIST, this, true );
-#endif
-	}
 	else if ( !Q_strcmp(command, "ChangeScenario") && !demo_ui_enable.GetString()[0] )
 	{
 		CBaseModPanel::GetSingleton().OpenWindow(WT_INGAMECHAPTERSELECT, this, true );
@@ -136,10 +127,6 @@ void InGameMainMenu::OnCommand( const char *command )
 	else if ( !Q_strcmp( command, "ChangeChapter" ) && !demo_ui_enable.GetString()[0] )
 	{
 		CBaseModPanel::GetSingleton().OpenWindow( WT_INGAMECHAPTERSELECT, this, true );
-	}
-	else if (!Q_strcmp(command, "ChangeDifficulty"))
-	{
-		CBaseModPanel::GetSingleton().OpenWindow(WT_INGAMEDIFFICULTYSELECT, this, true );
 	}
 	else if (!Q_strcmp(command, "RestartScenario"))
 	{
@@ -185,37 +172,6 @@ void InGameMainMenu::OnCommand( const char *command )
 
 		m_ActiveControl->NavigateFrom( );
 		CBaseModPanel::GetSingleton().OpenWindow( WT_ACHIEVEMENTS, this, true );
-	}
-	else if ( char const *szLeaderboards = StringAfterPrefix( command, "Leaderboards_" ) )
-	{
-		if ( CheckAndDisplayErrorIfNotLoggedIn() ||
-			CUIGameData::Get()->CheckAndDisplayErrorIfOffline( this,
-			"#L4D360UI_MainMenu_SurvivalLeaderboards_Tip_Disabled" ) )
-			return;
-
-		KeyValues *pSettings = NULL;
-		if ( *szLeaderboards )
-		{
-			pSettings = KeyValues::FromString(
-				"settings",
-				" game { "
-					" mode = "
-				" } "
-				);
-			pSettings->SetString( "game/mode", szLeaderboards );
-		}
-		else
-		{
-			pSettings = g_pMatchFramework->GetMatchNetworkMsgController()->GetActiveServerGameDetails( NULL );
-		}
-		
-		if ( !pSettings )
-			return;
-		
-		KeyValues::AutoDelete autodelete( pSettings );
-		
-		m_ActiveControl->NavigateFrom( );
-		CBaseModPanel::GetSingleton().OpenWindow( WT_LEADERBOARD, this, true, pSettings );
 	}
 	else if (!Q_strcmp(command, "AudioVideo"))
 	{
@@ -264,12 +220,6 @@ void InGameMainMenu::OnCommand( const char *command )
 	{
 		FlyoutMenu::CloseActiveMenu();
 		CBaseModPanel::GetSingleton().OpenKeyBindingsDialog( this );
-	}
-	else if (!Q_strcmp(command, "MultiplayerSettings"))
-	{
-		// standalone multiplayer settings dialog, PC only
-		m_ActiveControl->NavigateFrom( );
-		CBaseModPanel::GetSingleton().OpenWindow(WT_MULTIPLAYER, this, true );
 	}
 	else if (!Q_strcmp(command, "CloudSettings"))
 	{

@@ -319,22 +319,6 @@ void MainMenu::OnCommand( const char *command )
 		FlyoutMenu::CloseActiveMenu();
 		CBaseModPanel::GetSingleton().OpenKeyBindingsDialog( this );
 	}
-	else if (!Q_strcmp(command, "MultiplayerSettings"))
-	{
-		if ( ui_old_options_menu.GetBool() )
-		{
-			CBaseModPanel::GetSingleton().OpenOptionsDialog( this );
-		}
-		else
-		{
-			// standalone multiplayer settings dialog, PC only
-			if ( m_ActiveControl )
-			{
-				m_ActiveControl->NavigateFrom( );
-			}
-			CBaseModPanel::GetSingleton().OpenWindow(WT_MULTIPLAYER, this, true );
-		}
-	}
 	else if (!Q_strcmp(command, "SeeAll"))
 	{
 		if ( CheckAndDisplayErrorIfNotLoggedIn() )
@@ -588,18 +572,18 @@ void MainMenu::OnOpen()
 
 	SetFooterState();
 
-#ifndef _X360
-	bool bSteamCloudVisible = false;
-
-	{
-		static CGameUIConVarRef cl_cloud_settings( "cl_cloud_settings" );
-		if ( cl_cloud_settings.GetInt() == -1 )
-		{
-			CBaseModPanel::GetSingleton().OpenWindow( WT_STEAMCLOUDCONFIRM, this, false );
-			bSteamCloudVisible = true;
-		}
-	}
-#endif
+//#ifndef _X360
+//	bool bSteamCloudVisible = false;
+//
+//	{
+//		static CGameUIConVarRef cl_cloud_settings( "cl_cloud_settings" );
+//		if ( cl_cloud_settings.GetInt() == -1 )
+//		{
+//			CBaseModPanel::GetSingleton().OpenWindow( WT_STEAMCLOUDCONFIRM, this, false );
+//			bSteamCloudVisible = true;
+//		}
+//	}
+//#endif
 }
 
 //=============================================================================
@@ -638,6 +622,7 @@ void MainMenu::SetFooterState()
 		footer->SetButtons( buttons, FF_MAINMENU, false );
 		footer->SetButtonText( FB_ABUTTON, "#L4D360UI_Select" );
 		footer->SetButtonText( FB_XBUTTON, "#L4D360UI_MainMenu_SeeAll" );
+		footer->SetCloseButtonVisible(false);
 	}
 }
 

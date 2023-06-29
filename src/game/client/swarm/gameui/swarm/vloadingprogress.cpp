@@ -75,6 +75,7 @@ LoadingProgress::LoadingProgress(Panel *parent, const char *panelName, LoadingWi
 	m_bDrawProgress = false;
 	m_bDrawSpinner = false;
 	m_bFullscreenPoster = true;
+	m_bDrawChapterPosters = true;
 
 	m_flLastEngineTime = 0;
 
@@ -89,12 +90,24 @@ LoadingProgress::LoadingProgress(Panel *parent, const char *panelName, LoadingWi
 		m_pDefaultPosterDataKV->deleteThis();
 		m_pDefaultPosterDataKV = NULL;
 	}
-
+	
 	m_pTipPanel = NULL;
 	if ( IsX360() )
 	{
 		m_pTipPanel = new CLoadingTipPanel( this );
 	}
+
+	m_pChapterPostersKV = new KeyValues("ChapterPosters");
+	if (!m_pChapterPostersKV->LoadFromFileEX(g_pFullFileSystem, "resource/ui/basemodui/loadingchapterposters.res", "GAME")) {
+		Msg("Missing the chapter posters file! No chapter images will display on loading screen.\n");
+		m_bDrawChapterPosters = false;
+		m_pChapterPostersKV->deleteThis();
+		m_pChapterPostersKV = NULL;
+	}
+
+	// ensure we have the chaper data loaded
+	if (!LoadChapterData())
+		m_bDrawChapterPosters = false;
 }
 
 //=============================================================================
@@ -103,7 +116,22 @@ LoadingProgress::~LoadingProgress()
 	if ( m_pDefaultPosterDataKV )
 		m_pDefaultPosterDataKV->deleteThis();
 	m_pDefaultPosterDataKV = NULL;
+
+	if (m_pChapterPostersKV)
+		m_pChapterPostersKV->deleteThis();
+	m_pChapterPostersKV = NULL;
 }
+
+bool LoadingProgress::LoadChapterData() {
+
+	if (!m_pChapterPostersKV)
+		return false;
+
+	m_pChapterPostersKV->
+
+	return true;
+}
+
 
 //=============================================================================
 void LoadingProgress::OnThink()
@@ -123,7 +151,8 @@ void LoadingProgress::ApplySchemeSettings( IScheme *pScheme )
 	BaseClass::ApplySchemeSettings( pScheme );
 
 	SetPaintBackgroundEnabled( true );
-	
+	SetCloseButtonVisible(false);
+
 	// now have controls, can now do further initing
 	m_bValid = true;
 
@@ -146,32 +175,6 @@ void LoadingProgress::ApplySchemeSettings( IScheme *pScheme )
 		m_textureID_LoadingBarBG = vgui::surface()->CreateNewTextureID();
 		vgui::surface()->DrawSetTextureFile( m_textureID_LoadingBarBG, pImageName, true, false );	
 	}
-
-	// need to get the default image loaded now
-	// find or create pattern
-	// Purposely not freeing these, need this image to be resident always. We flip to
-	// this image on a sign out during loading and cannot bring it into	existence then.
-#if defined ( SUPPORT_DEFAULT_LOADING_POSTER )
-	if ( m_pDefaultPosterDataKV )
-	{
-		static ConVarRef mat_xbox_iswidescreen( "mat_xbox_iswidescreen" );
-		bool bIsWidescreen = mat_xbox_iswidescreen.GetBool();
-		bool bFullscreenPoster = m_pDefaultPosterDataKV->GetBool( "fullscreen", false );
-		const char *pszPosterImage = ( bFullscreenPoster && bIsWidescreen ) ? m_pDefaultPosterDataKV->GetString( "posterImage_widescreen" ) : m_pDefaultPosterDataKV->GetString( "posterImage" );
-
-		// have to do this to mimic what the bowels of the scheme manager does with bitmaps
-		bool bPrependVguiFix = V_strnicmp( pszPosterImage, "vgui", 4 ) != 0;
-		CFmtStr sPosterImageFmt( "%s%s", ( bPrependVguiFix ? "vgui/" : "" ), pszPosterImage );
-		pszPosterImage = sPosterImageFmt;
-
-		m_textureID_DefaultPosterImage = vgui::surface()->DrawGetTextureId( pszPosterImage );
-		if ( m_textureID_DefaultPosterImage == -1 )
-		{
-			m_textureID_DefaultPosterImage = vgui::surface()->CreateNewTextureID();
-			vgui::surface()->DrawSetTextureFile( m_textureID_DefaultPosterImage, pszPosterImage, true, false );	
-		}
-	}
-#endif
 
 	SetupControlStates();
 }
@@ -197,17 +200,14 @@ void LoadingProgress::Close()
 // this is where the spinner gets updated.
 void LoadingProgress::UpdateWorkingAnim()
 {
-	if ( m_pWorkingAnim && ( m_bDrawSpinner || m_LoadingType == LT_TRANSITION ) )
+	if ( m_pWorkingAnim && m_bDrawSpinner /*|| m_LoadingType == LT_TRANSITION )*/ ) // draw as long as we have a spinner and a load screen
 	{
 		// clock the anim at 10hz
 		float time = Plat_FloatTime();
 		if ( ( m_flLastEngineTime + 0.1f ) < time )
 		{
-
 			m_flLastEngineTime = time;
-#ifdef SWARM_DLL // TODO: find a fix here
 			m_pWorkingAnim->SetFrame( m_pWorkingAnim->GetFrame() + 1 );
-#endif
 		}
 	}
 }
@@ -302,13 +302,13 @@ void LoadingProgress::PaintBackground()
 	{
 		int x, y, wide, tall;
 
-		wide = tall = scheme()->GetProportionalScaledValue( 45 );
-		x = scheme()->GetProportionalScaledValue( 45 ) - wide/2;
-		y = screenTall - scheme()->GetProportionalScaledValue( 32 ) - tall/2;
-
-#ifdef SWARM_DLL // TODO: find a fix here
+		// fuck this nonsense about overwriting the config file.
+		// WHO IN THE FUCK HARDCODED THE BOUNDS AND WHY! -klax
+		//wide = tall = scheme()->GetProportionalScaledValue( 45 );
+		//x = scheme()->GetProportionalScaledValue( 45 ) - wide/2;
+		//y = screenTall - scheme()->GetProportionalScaledValue( 32 ) - tall/2;
+		m_pWorkingAnim->GetBounds(x, y, wide, tall);
 		m_pWorkingAnim->GetImage()->SetFrame( m_pWorkingAnim->GetFrame() );
-#endif
 
 		surface()->DrawSetColor( Color( 255, 255, 255, 255 ) );
 		surface()->DrawSetTexture( m_pWorkingAnim->GetImage()->GetID() );
@@ -558,6 +558,21 @@ bool LoadingProgress::ShouldShowPosterForLevel( KeyValues *pMissionInfo, KeyValu
 	return ( m_pDefaultPosterDataKV != NULL );
 }
 
+// temporary until i can make a poster transition + config file for holding these names
+static const char* m_pszLoadingScreenCh1[4] = {
+	"loading_screens/loadingscreen_a1_1",
+	"loading_screens/loadingscreen_a1_2",
+	"loading_screens/loadingscreen_a1_3",
+	"loading_screens/loadingscreen_a1_4",
+};
+
+static const char* m_pszLoadingScreenCh1Wide[4] = {
+	"loading_screens/loadingscreen_a1_1_widescreen",
+	"loading_screens/loadingscreen_a1_2_widescreen",
+	"loading_screens/loadingscreen_a1_3_widescreen",
+	"loading_screens/loadingscreen_a1_4_widescreen",
+};
+
 //=============================================================================
 void LoadingProgress::SetupPoster( void )
 {
@@ -566,25 +581,21 @@ void LoadingProgress::SetupPoster( void )
 	bool bNamesVisible = false;
 	vgui::ImagePanel *pPoster = dynamic_cast< vgui::ImagePanel* >( FindChildByName( "Poster" ) );
 	if ( pPoster )
-	{ 
-#if !defined( _X360 )
+	{
 		int screenWide, screenTall;
 		surface()->GetScreenSize( screenWide, screenTall );
 		float aspectRatio = (float)screenWide/(float)screenTall;
 		bool bIsWidescreen = aspectRatio >= 1.5999f;
-#else
-		static ConVarRef mat_xbox_iswidescreen( "mat_xbox_iswidescreen" );
-		bool bIsWidescreen = mat_xbox_iswidescreen.GetBool();
-#endif
+
 		const char *pszPosterImage;
 		int nChosenLoadingImage = RandomInt( 1, 4 );
 		switch( nChosenLoadingImage )
 		{
-			case 1: pszPosterImage = ( m_bFullscreenPoster && bIsWidescreen ) ? "swarm/loading/BGFX01_wide" : "swarm/loading/BGFX01"; break;
-			case 2: pszPosterImage = ( m_bFullscreenPoster && bIsWidescreen ) ? "swarm/loading/BGFX02_wide" : "swarm/loading/BGFX02"; break;
-			case 3: pszPosterImage = ( m_bFullscreenPoster && bIsWidescreen ) ? "swarm/loading/BGFX03_wide" : "swarm/loading/BGFX03"; break;
-			case 4:
-			default: pszPosterImage = ( m_bFullscreenPoster && bIsWidescreen ) ? "swarm/loading/BGFX04_wide" : "swarm/loading/BGFX04"; break;
+			case 1: pszPosterImage = ( m_bFullscreenPoster && bIsWidescreen ) ? m_pszLoadingScreenCh1Wide[0] : m_pszLoadingScreenCh1[0]; break;
+			case 2: pszPosterImage = ( m_bFullscreenPoster && bIsWidescreen ) ? m_pszLoadingScreenCh1Wide[1] : m_pszLoadingScreenCh1[1]; break;
+			case 3: pszPosterImage = ( m_bFullscreenPoster && bIsWidescreen ) ? m_pszLoadingScreenCh1Wide[2] : m_pszLoadingScreenCh1[2]; break;
+			case 4: pszPosterImage = ( m_bFullscreenPoster && bIsWidescreen ) ? m_pszLoadingScreenCh1Wide[3] : m_pszLoadingScreenCh1[3]; break;
+			default: pszPosterImage = ( m_bFullscreenPoster && bIsWidescreen ) ? m_pszLoadingScreenCh1Wide[0] : m_pszLoadingScreenCh1[0]; break;
 		}
 
 		// if the image was cached this will just hook it up, otherwise it will load it
@@ -596,16 +607,12 @@ void LoadingProgress::SetupPoster( void )
 	}
 
 	bool bIsLocalized = false;
-#ifdef _X360
-	bIsLocalized = XBX_IsLocalized();
-#else
 	char uilanguage[ 64 ];
 	engine->GetUILanguage( uilanguage, sizeof( uilanguage ) );
 	if ( Q_stricmp( uilanguage, "english" ) )
 	{
 		bIsLocalized = true;
 	}
-#endif
 
 	SetControlVisible( "LocalizedCampaignName", false );
 	SetControlVisible( "LocalizedCampaignTagline", false );

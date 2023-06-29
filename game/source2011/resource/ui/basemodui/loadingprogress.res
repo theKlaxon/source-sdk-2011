@@ -18,8 +18,6 @@
 	{
 		"ControlName"			"ImagePanel"
 		"fieldName"				"WorkingAnim"
-		"xpos"					"r65"		[$GAMECONSOLE]
-		"ypos"					"0"			[$GAMECONSOLE]
 		"xpos"					"r75"		[!$GAMECONSOLE]
 		"ypos"					"10"		[!$GAMECONSOLE]
 		"wide"					"65"
@@ -38,8 +36,10 @@
 	{
 		"ControlName"			"Label"
 		"fieldName"				"LoadingProgess"
-		"xpos"					"r-135"
-		"ypos"					"r10"
+		"xpos"					"r1"	[$GAMECONSOLE]
+		"ypos"					"r1"	[$GAMECONSOLE]
+		"xpos"					"r11"	[!$GAMECONSOLE]
+		"ypos"					"r11"	[!$GAMECONSOLE]
 		"wide"					"0"
 		"tall"					"0"
 		"visible"				"0"
@@ -48,7 +48,23 @@
 		"usetitlesafe"			"1"
 	}
 
-
+	"PnlGamerPic"
+	{
+		"ControlName"			"ImagePanel"
+		"fieldName"				"PnlGamerPic"
+		"xpos"					"1"		[$GAMECONSOLE]
+		"ypos"					"r41"	[$GAMECONSOLE]
+		"xpos"					"11"	[!$GAMECONSOLE]
+		"ypos"					"r51"	[!$GAMECONSOLE]
+		"wide"					"40"
+		"tall"					"40"
+		"visible"				"0"
+		"enabled"				"1"
+		"tabPosition"			"0"
+		"scaleImage"			"1"
+		"image"					"icon_lobby"
+		"usetitlesafe"			"1"
+	}
 
 	"LblGamerTag"
 	{
@@ -90,115 +106,21 @@
 		"fgcolor_override"		"255 255 255 255"
 		"usetitlesafe"			"1"
 	}
-
-	"LblMapTitle"
-	{
-		"ControlName"			"Label"
-		"fieldName"				"LblMapTitle"
-		"xpos"					"1"	[$GAMECONSOLE]
-		"ypos"					"r73"	[$GAMECONSOLE]
-		"xpos"					"90"	[!$GAMECONSOLE]
-		"ypos"					"r67"	[!$GAMECONSOLE]
-		"zpos"					"999"
-		"wide"					"500"
-		"tall"					"30"
-		"visible"				"0"
-		"enabled"				"1"
-		"tabPosition"			"0"
-		"Font"					"DialogTitle"
-		"labelText"				""
-		"textAlignment"			"west"
-		"fgcolor_override"		"255 255 255 255"
-		"usetitlesafe"			"1"
-		"noshortcutsyntax"		"1"
-	}
 	
-	"LblMapTitleDesc"
+	// still using asw gameui as a base, gonna reuse poster system
+	"Poster"
 	{
-		"ControlName"			"Label"
-		"fieldName"				"LblMapTitleDesc"
-		"xpos"					"45"	[$GAMECONSOLE]
-		"ypos"					"r22"	[$GAMECONSOLE]
-		"xpos"					"91"	[!$GAMECONSOLE]
-		"ypos"					"r43"	[!$GAMECONSOLE]
-		"zpos"					"999"
-		"wide"					"200"
-		"tall"					"25"
-		"visible"				"0"
-		"enabled"				"1"
-		"tabPosition"			"0"
-		"Font"					"GamerTagStatus"
-		"labelText"				""
-		"textAlignment"			"west"
-		"fgcolor_override"		"255 255 255 255"
-		"usetitlesafe"			"1"
-	}
-	
-	
-		"ImgEmployeeBadge"
-	{
-		"ControlName"					"ImagePanel"
-		"fieldName"						"ImgEmployeeBadge"
-		"xpos"							"20"
-		"ypos"							"r120"
-		"zpos"							"900"
-		"wide"							"136"
-		"tall"							"136"
-		"visible"						"0"
-		"enabled"						"1"
-		"tabPosition"					"0"
-		"scaleImage"					"1"
-		"image"							"badgeBg"
-	}
-
-	"ImgBadgeOverlay"
-	{
-		"ControlName"					"ImagePanel"
-		"fieldName"						"ImgBadgeOverlay"
-		"xpos"							"20"
-		"ypos"							"r120"
-		"zpos"							"999"
-		"wide"							"136"
-		"tall"							"136"
-		"visible"						"0"
-		"enabled"						"1"
-		"tabPosition"					"0"
-		"scaleImage"					"1"
-		"image"							"badgeOverlay"
-	}
-
-	"PnlGamerPic"
-	{
-		"ControlName"			"ImagePanel"
-		"fieldName"				"PnlGamerPic"
-		"xpos"					"11"		[$GAMECONSOLE]
-		"ypos"					"r35"	[$GAMECONSOLE]
-		"xpos"					"32"	[!$GAMECONSOLE]
-		"ypos"					"r102"	[!$GAMECONSOLE]
-		"zpos"							"910"
-		"wide"					"48"
-		"tall"					"48"
-		"visible"				"0"
-		"enabled"				"1"
-		"tabPosition"			"0"
-		"scaleImage"			"1"
-		"image"					"icon_lobby"
-		"usetitlesafe"			"1"
-	}
-	
-	"ImgBadgeLogo"
-	{
-		"ControlName"					"ImagePanel"
-		"fieldName"						"ImgBadgeLogo"
-		"xpos"							"17"
-		"ypos"							"r43"
-		"zpos"							"910"
-		"wide"							"64"
-		"tall"							"16"
-		"visible"						"0"
-		"enabled"						"1"
-		"tabPosition"					"0"
-		"scaleImage"					"1"
-		"image"							"logo_aperture_badge"
+		"ControlName"		"ImagePanel"
+		"fieldName"			"Poster"
+		"xpos"				"c-240"
+		"ypos"				"0"
+		"wide"				"480"
+		"tall"				"f0"
+		"zpos"				"3"
+		"scaleImage"		"1"
+		"visible"			"0"
+		"enabled"			"1"
+		// APS: THESE ARE NOW DYNAMIC - DON"T PUT A DEFAULT IMAGE HERE!
+		"image"				""
 	}
 }

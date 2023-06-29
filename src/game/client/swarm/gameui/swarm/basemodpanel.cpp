@@ -20,10 +20,6 @@
 #include "filesystem/IXboxInstaller.h"
 #include "tier2/renderutils.h"
 
-#ifdef _X360
-	#include "xbox/xbox_launch.h"
-#endif
-
 // BaseModUI High-level windows
 #include "VTransitionScreen.h"
 #include "VAchievements.h"
@@ -64,7 +60,6 @@
 #include "vcustomcampaigns.h"
 #include "vdownloadcampaign.h"
 #include "vjukebox.h"
-#include "vleaderboard.h"
 #include "gameconsole.h"
 #include "vgui/ISystem.h"
 #include "vgui/ISurface.h"
@@ -344,21 +339,7 @@ CBaseModFrame* CBaseModPanel::OpenWindow(const WINDOW_TYPE & wt, CBaseModFrame *
 		case WT_CONTROLLER_BUTTONS:
 			m_Frames[wt] = new ControllerOptionsButtons(this, "ControllerOptionsButtons");
 			break;
-
-		case WT_DOWNLOADS:
-#if defined( _X360 )
-			// not for xbox
-			Assert( 0 );
-			break;
-#else
-			m_Frames[wt] = new Downloads(this, "Downloads");
-#endif
-			break;
-
-		case WT_GAMELOBBY:
-			m_Frames[wt] = new GameLobby(this, "GameLobby");
-			break;
-
+		
 		case WT_GAMEOPTIONS:
 			m_Frames[wt] = new GameOptions(this, "GameOptions");
 			break;
@@ -370,11 +351,7 @@ CBaseModFrame* CBaseModPanel::OpenWindow(const WINDOW_TYPE & wt, CBaseModFrame *
 		case WT_GENERICCONFIRMATION:
 			m_Frames[wt] = new GenericConfirmation(this, "GenericConfirmation");
 			break;
-
-		case WT_INGAMEDIFFICULTYSELECT:
-			m_Frames[wt] = new InGameDifficultySelect(this, "InGameDifficultySelect");
-			break;
-
+		
 		case WT_INGAMEMAINMENU:
 			m_Frames[wt] = new InGameMainMenu(this, "InGameMainMenu");
 			break;
@@ -383,10 +360,6 @@ CBaseModFrame* CBaseModPanel::OpenWindow(const WINDOW_TYPE & wt, CBaseModFrame *
 			m_Frames[wt] = new InGameChapterSelect(this, "InGameChapterSelect");
 			break;
 
-		case WT_INGAMEKICKPLAYERLIST:
-			m_Frames[wt] = new InGameKickPlayerList(this, "InGameKickPlayerList");
-			break;
-		
 		case WT_KEYBOARDMOUSE:
 #if defined( _X360 )
 			// not for xbox
@@ -408,19 +381,11 @@ CBaseModFrame* CBaseModPanel::OpenWindow(const WINDOW_TYPE & wt, CBaseModFrame *
 		case WT_MAINMENU:
 			m_Frames[wt] = new MainMenu(this, "MainMenu");
 			break;
-
-		case WT_MULTIPLAYER:
-			m_Frames[wt] = new Multiplayer(this, "Multiplayer");
-			break;
-
+		
 		case WT_OPTIONS:
 			m_Frames[wt] = new Options(this, "Options");
 			break;
-
-		case WT_SIGNINDIALOG:
-			m_Frames[wt] = new SignInDialog(this, "SignInDialog");
-			break;
-
+		
 		case WT_GENERICWAITSCREEN:
 			m_Frames[ wt ] = new GenericWaitScreen( this, "GenericWaitScreen" );
 			break;
@@ -448,35 +413,7 @@ CBaseModFrame* CBaseModPanel::OpenWindow(const WINDOW_TYPE & wt, CBaseModFrame *
 		case WT_VIDEO:
 			m_Frames[wt] = new Video(this, "Video");
 			break;
-
-		case WT_STEAMCLOUDCONFIRM:
-#if defined( _X360 )
-			// not for xbox
-			Assert( 0 );
-			break;
-#else
-			m_Frames[wt] = new SteamCloudConfirmation(this, "SteamCloudConfirmation");
-#endif
-			break;
-
-		case WT_STEAMGROUPSERVERS:
-			m_Frames[ wt ] = new FoundGroupGames( this, "FoundGames" );
-			break;
-
-		case WT_CUSTOMCAMPAIGNS:
-#if defined( _X360 )
-			// not for xbox
-			Assert( 0 );
-			break;
-#else
-			m_Frames[ wt ] = new CustomCampaigns( this, "CustomCampaigns" );
-#endif
-			break;
-
-		case WT_LEADERBOARD:
-			m_Frames[ wt ] = new Leaderboard( this );
-			break;
-
+		
 		case WT_ADDONS:
 #if defined( _X360 )
 			// not for xbox
@@ -900,13 +837,8 @@ void CBaseModPanel::OnGameUIActivated()
 #endif
 
 	SetVisible( true );
-
-	// This is terrible, why are we directing the window that we open when we are only trying to activate the UI?
-	if ( WT_GAMELOBBY == GetActiveWindowType() )
-	{
-		return;
-	}
-	else if ( !IsX360() && WT_LOADINGPROGRESS == GetActiveWindowType() )
+	
+	if ( !IsX360() && WT_LOADINGPROGRESS == GetActiveWindowType() )
 	{
 		// Ignore UI activations when loading poster is up
 		return;
@@ -1374,18 +1306,6 @@ void CBaseModPanel::OnLevelLoadingFinished( KeyValues *kvEvent )
 		GameUI().HideGameUI();
 	}
 
-	// if we are loading into the lobby, then skip the UIActivation code path
-	// this can happen if we accepted an invite to player who is in the lobby while we were in-game
-	if ( WT_GAMELOBBY != GetActiveWindowType() )
-	{
-		// if we are loading into the front-end, then activate the main menu (or attract screen, depending on state)
-		// or if a message box is pending force open game ui
-		if ( GameUI().IsInBackgroundLevel() || pFrame )
-		{
-			GameUI().OnGameUIActivated();
-		}
-	}
-
 	if ( bError )
 	{
 		GenericConfirmation* pMsg = ( GenericConfirmation* ) OpenWindow( WT_GENERICCONFIRMATION, NULL, false );		
@@ -1452,19 +1372,19 @@ void CBaseModPanel::OnEvent( KeyValues *pEvent )
 			char const *szNetwork = pSettings->GetString( "system/network", "" );
 			int numLocalPlayers = pSettings->GetInt( "members/numPlayers", 1 );
 			
-			WINDOW_TYPE wtGameLobby = WT_GAMELOBBY;
-			if ( !Q_stricmp( "offline", szNetwork ) &&
-				 numLocalPlayers <= 1 )
-			{
-				// We have a single-player offline session
-				wtGameLobby = WT_GAMESETTINGS;
-			}
-			else
-			{
-				// Automatically start the map, no configuration required
-				pSession->Command( KeyValues::AutoDeleteInline( new KeyValues( "Start" ) ) );
-				return;
-			}
+			WINDOW_TYPE wtGameLobby = WT_MAINMENU;
+			////if ( !Q_stricmp( "offline", szNetwork ) &&
+			////	 numLocalPlayers <= 1 )
+			//{
+			//	// We have a single-player offline session
+			//	wtGameLobby = WT_GAMESETTINGS;
+			//}
+			////else
+			////{
+			////	// Automatically start the map, no configuration required
+			////	pSession->Command( KeyValues::AutoDeleteInline( new KeyValues( "Start" ) ) );
+			////	return;
+			////}
 
 			// We have created a session
 			CloseAllWindows();
@@ -1795,7 +1715,7 @@ void CBaseModPanel::ApplySchemeSettings(IScheme *pScheme)
 	surface()->GetScreenSize( screenWide, screenTall );
 
 	char filename[MAX_PATH];
-	V_snprintf( filename, sizeof( filename ), "VGUI/swarm/loading/BGFX01" ); // TODO: engine->GetStartupImage( filename, sizeof( filename ), screenWide, screenTall );
+	V_snprintf( filename, sizeof( filename ), "console/portal2_product_1_widescreen" ); // TODO: engine->GetStartupImage( filename, sizeof( filename ), screenWide, screenTall );
 	m_iBackgroundImageID = surface()->CreateNewTextureID();
 	surface()->DrawSetTextureFile( m_iBackgroundImageID, filename, true, false );
 
@@ -1829,11 +1749,11 @@ void CBaseModPanel::ApplySchemeSettings(IScheme *pScheme)
 	if ( aspectRatio >= 1.6f )
 	{
 		// use the widescreen version
-		Q_snprintf( m_szFadeFilename, sizeof( m_szFadeFilename ), "materials/console/%s_widescreen.vtf", "SwarmSelectionScreen" );
+		Q_snprintf( m_szFadeFilename, sizeof( m_szFadeFilename ), "materials/console/%s_widescreen.vtf", "portal2_product_1" );
 	}
 	else
 	{
-		Q_snprintf( m_szFadeFilename, sizeof( m_szFadeFilename ), "materials/console/%s_widescreen.vtf", "SwarmSelectionScreen" );
+		Q_snprintf( m_szFadeFilename, sizeof( m_szFadeFilename ), "materials/console/%s_widescreen.vtf", "portal2_product_1" );
 	}
 
 	// TODO: GetBackgroundMusic

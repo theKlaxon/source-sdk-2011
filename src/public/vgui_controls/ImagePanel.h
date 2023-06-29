@@ -14,6 +14,7 @@
 
 #include <vgui/VGUI.h>
 #include <vgui_controls/Panel.h>
+#include <..\public\vgui\IImage.h>
 
 namespace vgui
 {
@@ -59,7 +60,8 @@ public:
 	bool EvictImage();
 	
 	int GetNumFrames();
-	void SetFrame( int nFrame );
+	void SetFrame(int nFrame);
+	int GetFrame() const;
 
 	void SetRotation( int iRotation ) { m_iRotation = iRotation; }
 
@@ -85,6 +87,9 @@ private:
 	Color m_FillColor;
 	Color m_DrawColor;
 	int m_iRotation;
+
+	bool m_bFrameImage;
+	int m_iFrame;
 };
 
 } // namespace vgui

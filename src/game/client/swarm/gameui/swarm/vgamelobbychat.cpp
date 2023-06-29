@@ -93,12 +93,6 @@ void CGameLobbyChatEntry::OnKeyTyped( wchar_t unichar )
 //-----------------------------------------------------------------------------
 void CGameLobbyChatEntry::OnKeyCodeTyped(vgui::KeyCode code)
 {
-	GameLobby* gameLobby = static_cast<GameLobby*>( CBaseModPanel::GetSingleton().GetWindow( WT_GAMELOBBY ) );
-	if ( gameLobby )
-	{
-		gameLobby->NotifyLobbyNotIdleActivity();
-	}
-
 	bool ctrl = (input()->IsKeyDown(KEY_LCONTROL) || input()->IsKeyDown(KEY_RCONTROL));
 
 	if ( !ctrl )
